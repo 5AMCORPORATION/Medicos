@@ -2,10 +2,18 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover"
+>
 
 <meta name="theme-color" content="#f5f8fc">
-<meta name="description" content="Plataforma premium de agenda médica. Encuentra especialistas, consulta disponibilidad y solicita tu cita.">
+
+<meta
+    name="description"
+    content="Medora — Plataforma premium de agenda médica. Encuentra especialistas, consulta disponibilidad y solicita tu cita."
+>
 
 <title>Medora — Agenda Médica</title>
 
@@ -42,9 +50,7 @@
 
     --danger:#c84646;
 
-    --danger-dark:#a93232;
-
-    --danger-soft:#fff0f0;
+    --danger-dark:#a83232;
 
     --shadow:0 18px 50px rgba(36,66,100,.10);
 
@@ -58,17 +64,19 @@
 }
 
 
+/* =========================================================
+   RESET
+========================================================= */
+
 *{
     box-sizing:border-box;
     margin:0;
     padding:0;
 }
 
-
 html{
     scroll-behavior:smooth;
 }
-
 
 body{
 
@@ -108,7 +116,6 @@ body{
     -webkit-font-smoothing:antialiased;
 }
 
-
 button,
 input,
 textarea,
@@ -116,22 +123,22 @@ select{
     font:inherit;
 }
 
-
 button{
     cursor:pointer;
 }
 
-
 button:disabled{
     cursor:not-allowed;
 }
-
 
 img{
     max-width:100%;
     display:block;
 }
 
+a{
+    color:inherit;
+}
 
 .hidden{
     display:none!important;
@@ -139,7 +146,7 @@ img{
 
 
 /* =========================================================
-   BACKGROUND
+   BACKGROUND GLOW
 ========================================================= */
 
 .background-glow{
@@ -161,7 +168,6 @@ img{
     z-index:-1;
 }
 
-
 .glow-one{
 
     top:8%;
@@ -170,7 +176,6 @@ img{
 
     background:#76aaff;
 }
-
 
 .glow-two{
 
@@ -194,22 +199,28 @@ header{
 
     z-index:100;
 
-    border-bottom:1px solid rgba(31,55,79,.07);
+    border-bottom:
+        1px solid rgba(31,55,79,.07);
 
-    background:rgba(245,248,252,.72);
+    background:
+        rgba(245,248,252,.72);
 
-    backdrop-filter:blur(24px) saturate(160%);
+    backdrop-filter:
+        blur(24px)
+        saturate(160%);
 
-    -webkit-backdrop-filter:blur(24px) saturate(160%);
+    -webkit-backdrop-filter:
+        blur(24px)
+        saturate(160%);
 }
-
 
 .nav{
 
-    width:min(
-        var(--max),
-        calc(100% - 32px)
-    );
+    width:
+        min(
+            var(--max),
+            calc(100% - 32px)
+        );
 
     min-height:72px;
 
@@ -224,7 +235,6 @@ header{
     gap:20px;
 }
 
-
 .brand{
 
     display:flex;
@@ -237,7 +247,6 @@ header{
 
     color:var(--text);
 }
-
 
 .brand-mark{
 
@@ -273,7 +282,6 @@ header{
         rgba(255,255,255,.35);
 }
 
-
 .brand-name{
 
     font-size:18px;
@@ -282,7 +290,6 @@ header{
 
     letter-spacing:-.04em;
 }
-
 
 .brand-sub{
 
@@ -293,7 +300,6 @@ header{
     margin-top:1px;
 }
 
-
 .header-actions{
 
     display:flex;
@@ -302,7 +308,6 @@ header{
 
     gap:10px;
 }
-
 
 .header-security{
 
@@ -316,7 +321,6 @@ header{
 
     font-size:12px;
 }
-
 
 .security-dot{
 
@@ -335,12 +339,12 @@ header{
 
 
 /* =========================================================
-   EMERGENCY BUTTON
+   EMERGENCY HEADER BUTTON
 ========================================================= */
 
-.emergency-button{
+.emergency-header{
 
-    display:flex;
+    display:inline-flex;
 
     align-items:center;
 
@@ -348,84 +352,46 @@ header{
 
     gap:7px;
 
-    min-height:40px;
+    min-height:38px;
 
     padding:0 13px;
 
-    border:1px solid
-        rgba(200,70,70,.16);
+    border-radius:12px;
 
-    border-radius:13px;
+    text-decoration:none;
 
-    color:var(--danger);
+    color:#a52f2f;
 
     background:
-        rgba(255,240,240,.82);
+        rgba(200,70,70,.07);
+
+    border:
+        1px solid
+        rgba(200,70,70,.16);
 
     font-size:11px;
 
-    font-weight:800;
-
-    box-shadow:
-        0 5px 15px
-        rgba(200,70,70,.06);
+    font-weight:750;
 
     transition:.22s;
 }
 
+.emergency-header:hover{
 
-.emergency-button:hover{
-
-    transform:translateY(-1px);
-
-    background:#ffe8e8;
+    background:
+        rgba(200,70,70,.12);
 
     border-color:
-        rgba(200,70,70,.30);
+        rgba(200,70,70,.25);
 
-    box-shadow:
-        0 9px 22px
-        rgba(200,70,70,.12);
+    transform:translateY(-1px);
 }
 
+.emergency-header svg{
 
-.emergency-icon{
+    width:15px;
 
-    width:21px;
-
-    height:21px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:50%;
-
-    color:white;
-
-    background:var(--danger);
-
-    font-size:11px;
-
-    animation:
-        emergencyPulse 2s
-        ease-in-out infinite;
-}
-
-
-@keyframes emergencyPulse{
-
-    0%,100%{
-        box-shadow:
-            0 0 0 0
-            rgba(200,70,70,.22);
-    }
-
-    50%{
-        box-shadow:
-            0 0 0 5px
-            rgba(200,70,70,0);
-    }
+    height:15px;
 }
 
 
@@ -435,10 +401,11 @@ header{
 
 main{
 
-    width:min(
-        var(--max),
-        calc(100% - 32px)
-    );
+    width:
+        min(
+            var(--max),
+            calc(100% - 32px)
+        );
 
     margin:auto;
 
@@ -456,9 +423,7 @@ main{
 
     display:grid;
 
-    grid-template-columns:
-        1.3fr
-        .7fr;
+    grid-template-columns:1.3fr .7fr;
 
     gap:30px;
 
@@ -477,6 +442,7 @@ main{
     border-radius:32px;
 
     background:
+
         linear-gradient(
             130deg,
             rgba(255,255,255,.93),
@@ -485,7 +451,6 @@ main{
 
     box-shadow:var(--shadow);
 }
-
 
 .hero::after{
 
@@ -510,7 +475,6 @@ main{
 
     pointer-events:none;
 }
-
 
 .eyebrow{
 
@@ -540,7 +504,6 @@ main{
     margin-bottom:17px;
 }
 
-
 .hero h1{
 
     max-width:650px;
@@ -559,12 +522,10 @@ main{
     font-weight:780;
 }
 
-
 .hero h1 span{
 
     color:var(--blue);
 }
-
 
 .hero p{
 
@@ -579,6 +540,63 @@ main{
     line-height:1.65;
 }
 
+.hero-actions{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:10px;
+
+    margin-top:23px;
+}
+
+.hero-emergency{
+
+    display:inline-flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    min-height:43px;
+
+    padding:0 15px;
+
+    border-radius:13px;
+
+    color:#a83232;
+
+    background:
+        rgba(200,70,70,.07);
+
+    border:
+        1px solid
+        rgba(200,70,70,.15);
+
+    text-decoration:none;
+
+    font-size:11px;
+
+    font-weight:750;
+
+    transition:.2s;
+}
+
+.hero-emergency:hover{
+
+    background:
+        rgba(200,70,70,.11);
+
+    transform:translateY(-1px);
+}
+
+.hero-emergency svg{
+
+    width:15px;
+
+    height:15px;
+}
 
 .hero-visual{
 
@@ -592,7 +610,6 @@ main{
 
     position:relative;
 }
-
 
 .medical-orb{
 
@@ -633,11 +650,8 @@ main{
         inset 0 1px white;
 
     animation:
-        float 5s
-        ease-in-out
-        infinite;
+        float 5s ease-in-out infinite;
 }
-
 
 .medical-orb::before,
 .medical-orb::after{
@@ -653,11 +667,9 @@ main{
     border-radius:50%;
 }
 
-
 .medical-orb::before{
     inset:-24px;
 }
-
 
 .medical-orb::after{
 
@@ -665,7 +677,6 @@ main{
 
     opacity:.5;
 }
-
 
 @keyframes float{
 
@@ -695,7 +706,6 @@ main{
     margin:16px 0 30px;
 }
 
-
 .trust-item{
 
     min-height:62px;
@@ -718,7 +728,6 @@ main{
     gap:12px;
 }
 
-
 .trust-icon{
 
     width:35px;
@@ -738,14 +747,12 @@ main{
     color:var(--blue);
 }
 
-
 .trust-item strong{
 
     display:block;
 
     font-size:13px;
 }
-
 
 .trust-item small{
 
@@ -770,9 +777,11 @@ main{
     background:
         rgba(255,255,255,.76);
 
-    backdrop-filter:blur(20px);
+    backdrop-filter:
+        blur(20px);
 
-    -webkit-backdrop-filter:blur(20px);
+    -webkit-backdrop-filter:
+        blur(20px);
 
     box-shadow:var(--shadow);
 
@@ -796,7 +805,6 @@ main{
         rgba(255,255,255,.50);
 }
 
-
 .progress-top{
 
     display:flex;
@@ -808,7 +816,6 @@ main{
     margin-bottom:15px;
 }
 
-
 .progress-label{
 
     font-size:13px;
@@ -816,14 +823,12 @@ main{
     font-weight:700;
 }
 
-
 .progress-count{
 
     color:var(--muted);
 
     font-size:12px;
 }
-
 
 .progress-track{
 
@@ -837,7 +842,6 @@ main{
 
     background:#e6edf5;
 }
-
 
 .progress-bar{
 
@@ -859,7 +863,6 @@ main{
         cubic-bezier(.2,.8,.2,1);
 }
 
-
 .steps{
 
     display:flex;
@@ -870,7 +873,6 @@ main{
 
     gap:5px;
 }
-
 
 .step{
 
@@ -885,14 +887,12 @@ main{
     transition:.3s;
 }
 
-
 .step.active{
 
     color:var(--blue);
 
     font-weight:700;
 }
-
 
 .step.done{
 
@@ -911,14 +911,12 @@ main{
     min-height:500px;
 }
 
-
 .step-view{
 
     animation:
         stepIn .45s
         cubic-bezier(.2,.8,.2,1);
 }
-
 
 @keyframes stepIn{
 
@@ -938,14 +936,12 @@ main{
     }
 }
 
-
 .section-heading{
 
     max-width:700px;
 
     margin-bottom:26px;
 }
-
 
 .section-heading .kicker{
 
@@ -962,7 +958,6 @@ main{
     margin-bottom:8px;
 }
 
-
 .section-heading h2{
 
     font-size:
@@ -976,7 +971,6 @@ main{
 
     line-height:1.05;
 }
-
 
 .section-heading p{
 
@@ -1003,7 +997,6 @@ main{
 
     gap:14px;
 }
-
 
 .choice-card{
 
@@ -1037,7 +1030,6 @@ main{
     text-align:left;
 }
 
-
 .choice-card::after{
 
     content:"";
@@ -1060,17 +1052,17 @@ main{
     transition:.3s;
 }
 
-
 .choice-card:hover{
 
-    transform:translateY(-3px);
+    transform:
+        translateY(-3px);
 
     border-color:
         rgba(36,107,254,.25);
 
-    box-shadow:var(--shadow-soft);
+    box-shadow:
+        var(--shadow-soft);
 }
-
 
 .choice-card.selected{
 
@@ -1089,7 +1081,6 @@ main{
         rgba(36,107,254,.12);
 }
 
-
 .card-icon{
 
     width:45px;
@@ -1104,11 +1095,11 @@ main{
 
     font-size:22px;
 
-    background:var(--blue-soft);
+    background:
+        var(--blue-soft);
 
     margin-bottom:17px;
 }
-
 
 .choice-card h3{
 
@@ -1116,7 +1107,6 @@ main{
 
     letter-spacing:-.025em;
 }
-
 
 .choice-card p{
 
@@ -1128,7 +1118,6 @@ main{
 
     margin-top:7px;
 }
-
 
 .card-meta{
 
@@ -1142,7 +1131,6 @@ main{
 
     margin-top:14px;
 }
-
 
 .pill{
 
@@ -1159,7 +1147,6 @@ main{
     font-weight:650;
 }
 
-
 .card-price{
 
     margin-top:13px;
@@ -1168,7 +1155,6 @@ main{
 
     font-weight:750;
 }
-
 
 .select-arrow{
 
@@ -1194,7 +1180,6 @@ main{
 
     transition:.25s;
 }
-
 
 .choice-card:hover .select-arrow,
 .choice-card.selected .select-arrow{
@@ -1222,7 +1207,6 @@ main{
     gap:16px;
 }
 
-
 .doctor-card{
 
     display:grid;
@@ -1246,15 +1230,14 @@ main{
     transition:.25s;
 }
 
-
 .doctor-card:hover{
 
     transform:
         translateY(-2px);
 
-    box-shadow:var(--shadow-soft);
+    box-shadow:
+        var(--shadow-soft);
 }
-
 
 .doctor-card.selected{
 
@@ -1265,7 +1248,6 @@ main{
         0 14px 35px
         rgba(36,107,254,.11);
 }
-
 
 .doctor-photo{
 
@@ -1285,14 +1267,12 @@ main{
         );
 }
 
-
 .doctor-info h3{
 
     font-size:17px;
 
     letter-spacing:-.03em;
 }
-
 
 .doctor-specialty{
 
@@ -1305,7 +1285,6 @@ main{
     margin-top:4px;
 }
 
-
 .doctor-info p{
 
     color:var(--muted);
@@ -1317,7 +1296,6 @@ main{
     margin:9px 0;
 }
 
-
 .doctor-data{
 
     display:flex;
@@ -1328,7 +1306,6 @@ main{
 
     margin-bottom:14px;
 }
-
 
 .doctor-data span{
 
@@ -1343,6 +1320,10 @@ main{
     color:#647386;
 }
 
+
+/* =========================================================
+   BUTTONS
+========================================================= */
 
 .primary-btn,
 .secondary-btn{
@@ -1362,7 +1343,6 @@ main{
     transition:.22s;
 }
 
-
 .primary-btn{
 
     color:white;
@@ -1379,7 +1359,6 @@ main{
         rgba(36,107,254,.19);
 }
 
-
 .primary-btn:hover{
 
     transform:
@@ -1390,12 +1369,11 @@ main{
         rgba(36,107,254,.25);
 }
 
-
 .primary-btn:active{
 
-    transform:scale(.98);
+    transform:
+        scale(.98);
 }
-
 
 .secondary-btn{
 
@@ -1404,12 +1382,10 @@ main{
     background:#eef2f6;
 }
 
-
 .secondary-btn:hover{
 
     background:#e4eaf0;
 }
-
 
 .full{
     width:100%;
@@ -1426,7 +1402,6 @@ main{
 
     gap:12px;
 }
-
 
 .service-card{
 
@@ -1453,15 +1428,14 @@ main{
     transition:.25s;
 }
 
-
 .service-card:hover{
 
     transform:
         translateX(2px);
 
-    box-shadow:var(--shadow-soft);
+    box-shadow:
+        var(--shadow-soft);
 }
-
 
 .service-card.selected{
 
@@ -1471,12 +1445,10 @@ main{
     background:#f5f9ff;
 }
 
-
 .service-card h3{
 
     font-size:15px;
 }
-
 
 .service-card p{
 
@@ -1489,7 +1461,6 @@ main{
     margin:5px 0 10px;
 }
 
-
 .service-details{
 
     display:flex;
@@ -1498,7 +1469,6 @@ main{
 
     flex-wrap:wrap;
 }
-
 
 .service-details span{
 
@@ -1513,12 +1483,10 @@ main{
     font-size:10px;
 }
 
-
 .service-price{
 
     text-align:right;
 }
-
 
 .service-price strong{
 
@@ -1528,7 +1496,6 @@ main{
 
     letter-spacing:-.04em;
 }
-
 
 .service-price button{
 
@@ -1550,7 +1517,6 @@ main{
     gap:22px;
 }
 
-
 .panel{
 
     border:
@@ -1565,7 +1531,6 @@ main{
         rgba(255,255,255,.72);
 }
 
-
 .panel-title{
 
     font-size:13px;
@@ -1574,7 +1539,6 @@ main{
 
     margin-bottom:15px;
 }
-
 
 .date-grid{
 
@@ -1585,7 +1549,6 @@ main{
 
     gap:8px;
 }
-
 
 .date-card{
 
@@ -1606,7 +1569,6 @@ main{
     transition:.2s;
 }
 
-
 .date-card small{
 
     display:block;
@@ -1618,7 +1580,6 @@ main{
     text-transform:uppercase;
 }
 
-
 .date-card strong{
 
     display:block;
@@ -1628,7 +1589,6 @@ main{
     font-size:17px;
 }
 
-
 .date-card span{
 
     color:#8390a0;
@@ -1636,13 +1596,11 @@ main{
     font-size:9px;
 }
 
-
 .date-card:hover{
 
     border-color:
         rgba(36,107,254,.35);
 }
-
 
 .date-card.selected{
 
@@ -1662,14 +1620,12 @@ main{
         rgba(36,107,254,.20);
 }
 
-
 .date-card.selected small,
 .date-card.selected span{
 
     color:
         rgba(255,255,255,.75);
 }
-
 
 .time-grid{
 
@@ -1680,7 +1636,6 @@ main{
 
     gap:8px;
 }
-
 
 .time-slot{
 
@@ -1703,7 +1658,6 @@ main{
     transition:.2s;
 }
 
-
 .time-slot:hover:not(:disabled){
 
     border-color:
@@ -1711,7 +1665,6 @@ main{
 
     color:var(--blue);
 }
-
 
 .time-slot.selected{
 
@@ -1721,7 +1674,6 @@ main{
 
     border-color:var(--blue);
 }
-
 
 .time-slot:disabled{
 
@@ -1749,7 +1701,6 @@ main{
     gap:15px;
 }
 
-
 .field{
 
     display:flex;
@@ -1759,12 +1710,10 @@ main{
     gap:7px;
 }
 
-
 .field.full-width{
 
     grid-column:1/-1;
 }
-
 
 .field label{
 
@@ -1774,7 +1723,6 @@ main{
 
     color:#566577;
 }
-
 
 .field input,
 .field textarea,
@@ -1802,7 +1750,6 @@ main{
     transition:.2s;
 }
 
-
 .field textarea{
 
     padding-top:13px;
@@ -1811,7 +1758,6 @@ main{
 
     min-height:90px;
 }
-
 
 .field input:focus,
 .field textarea:focus,
@@ -1825,7 +1771,6 @@ main{
         rgba(36,107,254,.08);
 }
 
-
 .field input.invalid,
 .field textarea.invalid{
 
@@ -1837,7 +1782,6 @@ main{
         rgba(200,70,70,.06);
 }
 
-
 .mode-options{
 
     display:grid;
@@ -1848,12 +1792,10 @@ main{
     gap:10px;
 }
 
-
 .mode-option{
 
     position:relative;
 }
-
 
 .mode-option input{
 
@@ -1861,7 +1803,6 @@ main{
 
     opacity:0;
 }
-
 
 .mode-label{
 
@@ -1892,7 +1833,6 @@ main{
     transition:.2s;
 }
 
-
 .mode-option input:checked + .mode-label{
 
     border-color:var(--blue);
@@ -1919,7 +1859,6 @@ main{
     align-items:start;
 }
 
-
 .review-card{
 
     border:
@@ -1933,7 +1872,6 @@ main{
     background:
         rgba(255,255,255,.75);
 }
-
 
 .review-row{
 
@@ -1950,12 +1888,10 @@ main{
         rgba(31,55,79,.07);
 }
 
-
 .review-row:last-child{
 
     border-bottom:0;
 }
-
 
 .review-row span:first-child{
 
@@ -1963,7 +1899,6 @@ main{
 
     font-size:11px;
 }
-
 
 .review-row span:last-child{
 
@@ -1973,7 +1908,6 @@ main{
 
     font-weight:700;
 }
-
 
 .ticket{
 
@@ -1994,7 +1928,6 @@ main{
         rgba(31,63,100,.13);
 }
 
-
 .ticket-top{
 
     padding:24px;
@@ -2009,7 +1942,6 @@ main{
         );
 }
 
-
 .ticket-brand{
 
     display:flex;
@@ -2021,12 +1953,10 @@ main{
     gap:10px;
 }
 
-
 .ticket-brand strong{
 
     font-size:15px;
 }
-
 
 .ticket-brand span{
 
@@ -2035,12 +1965,10 @@ main{
     opacity:.78;
 }
 
-
 .ticket-title{
 
     margin-top:27px;
 }
-
 
 .ticket-title small{
 
@@ -2053,7 +1981,6 @@ main{
     letter-spacing:.08em;
 }
 
-
 .ticket-title h3{
 
     font-size:27px;
@@ -2063,12 +1990,10 @@ main{
     margin-top:4px;
 }
 
-
 .ticket-body{
 
     padding:20px 24px 24px;
 }
-
 
 .ticket-item{
 
@@ -2081,14 +2006,12 @@ main{
     padding:9px 0;
 }
 
-
 .ticket-item span:first-child{
 
     color:#7a8796;
 
     font-size:10px;
 }
-
 
 .ticket-item span:last-child{
 
@@ -2098,7 +2021,6 @@ main{
 
     text-align:right;
 }
-
 
 .ticket-divider{
 
@@ -2111,7 +2033,6 @@ main{
     margin:8px 0;
 }
 
-
 .ticket-total{
 
     display:flex;
@@ -2123,7 +2044,6 @@ main{
     margin-top:10px;
 }
 
-
 .ticket-total span{
 
     color:#7a8796;
@@ -2131,14 +2051,12 @@ main{
     font-size:10px;
 }
 
-
 .ticket-total strong{
 
     font-size:22px;
 
     letter-spacing:-.04em;
 }
-
 
 .ticket-id{
 
@@ -2161,514 +2079,6 @@ main{
 
 
 /* =========================================================
-   LOCATION / MAP
-========================================================= */
-
-.location-section{
-
-    margin-top:30px;
-
-    padding-top:5px;
-}
-
-
-.location-header{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:end;
-
-    gap:20px;
-
-    margin-bottom:17px;
-}
-
-
-.location-header .kicker{
-
-    color:var(--blue);
-
-    font-size:11px;
-
-    font-weight:750;
-
-    letter-spacing:.07em;
-
-    text-transform:uppercase;
-
-    margin-bottom:7px;
-}
-
-
-.location-header h2{
-
-    font-size:
-        clamp(
-            28px,
-            4vw,
-            39px
-        );
-
-    letter-spacing:-.055em;
-}
-
-
-.location-header p{
-
-    margin-top:8px;
-
-    color:var(--muted);
-
-    font-size:13px;
-
-    line-height:1.5;
-}
-
-
-.location-card{
-
-    display:grid;
-
-    grid-template-columns:
-        1fr 360px;
-
-    min-height:360px;
-
-    overflow:hidden;
-
-    border:
-        1px solid
-        var(--line);
-
-    border-radius:27px;
-
-    background:
-        rgba(255,255,255,.78);
-
-    box-shadow:var(--shadow);
-}
-
-
-.map-container{
-
-    position:relative;
-
-    min-height:360px;
-
-    background:#dfe7ef;
-
-    overflow:hidden;
-}
-
-
-.map-container iframe{
-
-    width:100%;
-
-    height:100%;
-
-    min-height:360px;
-
-    display:block;
-
-    border:0;
-
-    filter:
-        saturate(.85)
-        contrast(.96);
-}
-
-
-.map-overlay{
-
-    position:absolute;
-
-    left:18px;
-
-    top:18px;
-
-    padding:9px 12px;
-
-    border:
-        1px solid
-        rgba(255,255,255,.55);
-
-    border-radius:12px;
-
-    background:
-        rgba(255,255,255,.83);
-
-    backdrop-filter:blur(12px);
-
-    -webkit-backdrop-filter:blur(12px);
-
-    color:#344458;
-
-    font-size:10px;
-
-    font-weight:750;
-
-    box-shadow:
-        0 8px 25px
-        rgba(30,55,80,.12);
-}
-
-
-.location-info{
-
-    padding:28px;
-
-    display:flex;
-
-    flex-direction:column;
-
-    justify-content:center;
-}
-
-
-.location-icon{
-
-    width:48px;
-
-    height:48px;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:16px;
-
-    color:var(--blue);
-
-    background:var(--blue-soft);
-
-    font-size:22px;
-
-    margin-bottom:17px;
-}
-
-
-.location-info h3{
-
-    font-size:21px;
-
-    letter-spacing:-.04em;
-}
-
-
-.location-address{
-
-    margin-top:9px;
-
-    color:var(--muted);
-
-    font-size:13px;
-
-    line-height:1.55;
-}
-
-
-.location-details{
-
-    margin-top:20px;
-
-    display:grid;
-
-    gap:10px;
-}
-
-
-.location-detail{
-
-    display:flex;
-
-    align-items:flex-start;
-
-    gap:10px;
-
-    color:#5f6f81;
-
-    font-size:11px;
-
-    line-height:1.45;
-}
-
-
-.location-detail-icon{
-
-    width:27px;
-
-    height:27px;
-
-    flex:none;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:9px;
-
-    background:#f0f4f8;
-
-    color:#627387;
-
-}
-
-
-.map-buttons{
-
-    display:flex;
-
-    gap:9px;
-
-    margin-top:22px;
-}
-
-
-.map-buttons a{
-
-    flex:1;
-
-    min-height:44px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-decoration:none;
-
-    border-radius:13px;
-
-    font-size:11px;
-
-    font-weight:750;
-
-    transition:.2s;
-}
-
-
-.map-primary{
-
-    color:white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #347bff,
-            #1859d2
-        );
-
-    box-shadow:
-        0 8px 18px
-        rgba(36,107,254,.16);
-}
-
-
-.map-secondary{
-
-    color:#405166;
-
-    background:#edf2f6;
-}
-
-
-.map-buttons a:hover{
-
-    transform:
-        translateY(-1px);
-}
-
-
-/* =========================================================
-   EMERGENCY SECTION
-========================================================= */
-
-.emergency-section{
-
-    margin-top:30px;
-
-    position:relative;
-
-    overflow:hidden;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:space-between;
-
-    gap:25px;
-
-    padding:24px 27px;
-
-    border:
-        1px solid
-        rgba(200,70,70,.13);
-
-    border-radius:24px;
-
-    background:
-        linear-gradient(
-            110deg,
-            rgba(255,255,255,.85),
-            rgba(255,244,244,.76)
-        );
-
-    box-shadow:
-        0 15px 40px
-        rgba(100,45,45,.06);
-}
-
-
-.emergency-section::after{
-
-    content:"";
-
-    position:absolute;
-
-    width:200px;
-
-    height:200px;
-
-    right:-90px;
-
-    top:-110px;
-
-    border-radius:50%;
-
-    background:
-        rgba(200,70,70,.07);
-}
-
-
-.emergency-content{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:14px;
-
-    position:relative;
-
-    z-index:1;
-}
-
-
-.emergency-large-icon{
-
-    width:51px;
-
-    height:51px;
-
-    flex:none;
-
-    display:grid;
-
-    place-items:center;
-
-    border-radius:16px;
-
-    color:white;
-
-    background:
-        linear-gradient(
-            145deg,
-            #dc5b5b,
-            #b73737
-        );
-
-    font-size:21px;
-
-    box-shadow:
-        0 10px 25px
-        rgba(200,70,70,.18);
-}
-
-
-.emergency-content h3{
-
-    font-size:15px;
-
-    letter-spacing:-.02em;
-}
-
-
-.emergency-content p{
-
-    margin-top:4px;
-
-    color:var(--muted);
-
-    font-size:11px;
-
-    line-height:1.5;
-}
-
-
-.emergency-call{
-
-    position:relative;
-
-    z-index:2;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    gap:8px;
-
-    min-height:45px;
-
-    padding:0 17px;
-
-    border:0;
-
-    border-radius:14px;
-
-    color:white;
-
-    background:
-        linear-gradient(
-            135deg,
-            #dc5b5b,
-            #b73737
-        );
-
-    font-size:11px;
-
-    font-weight:800;
-
-    text-decoration:none;
-
-    white-space:nowrap;
-
-    box-shadow:
-        0 9px 22px
-        rgba(200,70,70,.18);
-
-    transition:.22s;
-}
-
-
-.emergency-call:hover{
-
-    transform:
-        translateY(-1px);
-
-    box-shadow:
-        0 13px 27px
-        rgba(200,70,70,.25);
-}
-
-
-/* =========================================================
    SUCCESS
 ========================================================= */
 
@@ -2684,16 +2094,13 @@ main{
         stepIn .5s ease;
 }
 
-
 .success-icon{
 
     width:82px;
 
     height:82px;
 
-    margin:
-        0 auto
-        20px;
+    margin:0 auto 20px;
 
     display:grid;
 
@@ -2712,7 +2119,6 @@ main{
         rgba(25,135,84,.12);
 }
 
-
 .success h2{
 
     font-size:35px;
@@ -2720,12 +2126,9 @@ main{
     letter-spacing:-.055em;
 }
 
-
 .success p{
 
-    margin:
-        11px auto
-        24px;
+    margin:11px auto 24px;
 
     color:var(--muted);
 
@@ -2733,7 +2136,6 @@ main{
 
     line-height:1.6;
 }
-
 
 .status-box{
 
@@ -2781,7 +2183,6 @@ main{
         rgba(250,252,255,.65);
 }
 
-
 .navigation-right{
 
     margin-left:auto;
@@ -2790,7 +2191,6 @@ main{
 
     gap:10px;
 }
-
 
 .back-btn{
 
@@ -2811,12 +2211,10 @@ main{
     font-weight:700;
 }
 
-
 .back-btn:hover{
 
     background:#eef2f6;
 }
-
 
 .next-btn{
 
@@ -2827,7 +2225,538 @@ main{
 
 
 /* =========================================================
-   EMPTY
+   LOCATION / MAP
+========================================================= */
+
+.location-section{
+
+    margin-top:30px;
+
+    scroll-margin-top:90px;
+}
+
+.location-heading{
+
+    margin-bottom:18px;
+}
+
+.location-heading .kicker{
+
+    color:var(--blue);
+
+    font-size:11px;
+
+    font-weight:750;
+
+    letter-spacing:.07em;
+
+    text-transform:uppercase;
+
+    margin-bottom:8px;
+}
+
+.location-heading h2{
+
+    font-size:
+        clamp(
+            28px,
+            4vw,
+            40px
+        );
+
+    letter-spacing:-.055em;
+}
+
+.location-heading p{
+
+    color:var(--muted);
+
+    font-size:14px;
+
+    line-height:1.6;
+
+    margin-top:8px;
+}
+
+.location-layout{
+
+    display:grid;
+
+    grid-template-columns:
+        .72fr 1.28fr;
+
+    gap:16px;
+}
+
+.location-card{
+
+    position:relative;
+
+    overflow:hidden;
+
+    padding:27px;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius:26px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.92),
+            rgba(239,246,255,.78)
+        );
+
+    box-shadow:
+        var(--shadow-soft);
+}
+
+.location-icon{
+
+    width:48px;
+
+    height:48px;
+
+    border-radius:15px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:
+        var(--blue-soft);
+
+    color:var(--blue);
+
+    margin-bottom:18px;
+}
+
+.location-icon svg{
+
+    width:23px;
+
+    height:23px;
+}
+
+.location-card h3{
+
+    font-size:20px;
+
+    letter-spacing:-.04em;
+}
+
+.location-address{
+
+    margin-top:8px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    line-height:1.6;
+}
+
+.location-details{
+
+    margin-top:23px;
+
+    display:grid;
+
+    gap:12px;
+}
+
+.location-detail{
+
+    display:flex;
+
+    align-items:flex-start;
+
+    gap:11px;
+}
+
+.location-detail-icon{
+
+    width:32px;
+
+    height:32px;
+
+    flex:none;
+
+    border-radius:10px;
+
+    display:grid;
+
+    place-items:center;
+
+    background:#f0f4f8;
+
+    color:#627286;
+}
+
+.location-detail strong{
+
+    display:block;
+
+    font-size:11px;
+}
+
+.location-detail span{
+
+    display:block;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    margin-top:2px;
+
+    line-height:1.4;
+}
+
+.route-btn{
+
+    width:100%;
+
+    margin-top:23px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    gap:8px;
+
+    text-decoration:none;
+}
+
+.route-btn svg{
+
+    width:16px;
+
+    height:16px;
+}
+
+.map-card{
+
+    min-height:440px;
+
+    overflow:hidden;
+
+    border:
+        1px solid
+        var(--line);
+
+    border-radius:26px;
+
+    background:#e9eff5;
+
+    box-shadow:
+        var(--shadow-soft);
+
+    position:relative;
+}
+
+.map-card iframe{
+
+    width:100%;
+
+    height:100%;
+
+    min-height:440px;
+
+    display:block;
+
+    border:0;
+
+    filter:
+        saturate(.88)
+        contrast(.96);
+}
+
+.map-label{
+
+    position:absolute;
+
+    left:16px;
+
+    top:16px;
+
+    z-index:2;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:9px 12px;
+
+    border-radius:12px;
+
+    background:
+        rgba(255,255,255,.90);
+
+    border:
+        1px solid
+        rgba(31,55,79,.08);
+
+    box-shadow:
+        0 8px 20px
+        rgba(31,55,79,.10);
+
+    backdrop-filter:blur(12px);
+
+    font-size:10px;
+
+    font-weight:750;
+}
+
+.map-label-dot{
+
+    width:7px;
+
+    height:7px;
+
+    border-radius:50%;
+
+    background:var(--blue);
+
+    box-shadow:
+        0 0 0 4px
+        rgba(36,107,254,.10);
+}
+
+
+/* =========================================================
+   EMERGENCY NOTICE
+========================================================= */
+
+.emergency-notice{
+
+    margin-top:16px;
+
+    padding:17px 19px;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:13px;
+
+    border:
+        1px solid
+        rgba(200,70,70,.13);
+
+    border-radius:18px;
+
+    background:
+        rgba(255,248,248,.82);
+}
+
+.emergency-notice-icon{
+
+    width:38px;
+
+    height:38px;
+
+    flex:none;
+
+    border-radius:12px;
+
+    display:grid;
+
+    place-items:center;
+
+    color:#b43838;
+
+    background:
+        rgba(200,70,70,.08);
+}
+
+.emergency-notice-icon svg{
+
+    width:19px;
+
+    height:19px;
+}
+
+.emergency-notice strong{
+
+    display:block;
+
+    font-size:12px;
+}
+
+.emergency-notice span{
+
+    display:block;
+
+    color:#7c7272;
+
+    font-size:10px;
+
+    line-height:1.5;
+
+    margin-top:3px;
+}
+
+
+/* =========================================================
+   FLOATING EMERGENCY
+========================================================= */
+
+.emergency-float{
+
+    position:fixed;
+
+    left:20px;
+
+    bottom:20px;
+
+    z-index:300;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:9px;
+
+    min-height:50px;
+
+    padding:0 15px;
+
+    border-radius:17px;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #c84646,
+            #a83232
+        );
+
+    box-shadow:
+        0 13px 30px
+        rgba(168,50,50,.25),
+
+        inset 0 1px
+        rgba(255,255,255,.20);
+
+    font-size:11px;
+
+    font-weight:750;
+
+    transition:.25s;
+}
+
+.emergency-float:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 17px 34px
+        rgba(168,50,50,.30);
+}
+
+.emergency-float svg{
+
+    width:18px;
+
+    height:18px;
+}
+
+.emergency-float-text{
+
+    display:flex;
+
+    flex-direction:column;
+
+    line-height:1.1;
+}
+
+.emergency-float-text small{
+
+    opacity:.76;
+
+    font-size:8px;
+
+    margin-bottom:3px;
+
+    text-transform:uppercase;
+
+    letter-spacing:.04em;
+}
+
+
+/* =========================================================
+   WHATSAPP FLOATING
+========================================================= */
+
+.whatsapp-float{
+
+    position:fixed;
+
+    right:20px;
+
+    bottom:20px;
+
+    z-index:300;
+
+    width:52px;
+
+    height:52px;
+
+    border-radius:17px;
+
+    display:grid;
+
+    place-items:center;
+
+    text-decoration:none;
+
+    color:white;
+
+    background:
+        linear-gradient(
+            145deg,
+            #31c76a,
+            #159447
+        );
+
+    box-shadow:
+        0 13px 30px
+        rgba(25,135,84,.22);
+
+    transition:.25s;
+}
+
+.whatsapp-float:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 17px 35px
+        rgba(25,135,84,.28);
+}
+
+.whatsapp-float svg{
+
+    width:24px;
+
+    height:24px;
+}
+
+
+/* =========================================================
+   EMPTY STATE
 ========================================================= */
 
 .empty{
@@ -2838,7 +2767,6 @@ main{
 
     color:var(--muted);
 }
-
 
 .empty-icon{
 
@@ -2891,7 +2819,6 @@ main{
     text-align:center;
 }
 
-
 .toast.show{
 
     opacity:1;
@@ -2907,22 +2834,23 @@ main{
 
 footer{
 
-    width:min(
-        var(--max),
-        calc(100% - 32px)
-    );
+    width:
+        min(
+            var(--max),
+            calc(100% - 32px)
+        );
 
-    margin:
-        0 auto;
+    margin:0 auto;
 
-    padding:
-        0 0 35px;
+    padding:0 0 35px;
 
     text-align:center;
 
     color:#8793a1;
 
     font-size:10px;
+
+    line-height:1.6;
 }
 
 
@@ -2939,12 +2867,10 @@ footer{
         padding:35px;
     }
 
-
     .hero-visual{
 
         min-height:170px;
     }
-
 
     .cards-grid{
 
@@ -2952,34 +2878,29 @@ footer{
             repeat(2,1fr);
     }
 
-
     .booking-selection{
 
         grid-template-columns:1fr;
     }
-
 
     .summary-layout{
 
         grid-template-columns:1fr;
     }
 
-
-    .location-card{
+    .location-layout{
 
         grid-template-columns:1fr;
     }
 
+    .location-card{
 
-    .map-container{
-
-        min-height:330px;
+        order:2;
     }
 
+    .map-card{
 
-    .map-container iframe{
-
-        min-height:330px;
+        order:1;
     }
 }
 
@@ -2997,44 +2918,41 @@ footer{
             );
     }
 
-
     .header-security{
 
         display:none;
     }
 
+    .header-actions{
 
-    .emergency-button{
-
-        min-height:37px;
-
-        padding:0 9px;
-
-        font-size:9px;
+        margin-left:auto;
     }
 
+    .emergency-header{
 
-    .emergency-icon{
+        min-height:34px;
 
-        width:19px;
+        padding:0 10px;
 
-        height:19px;
+        font-size:10px;
     }
 
+    .emergency-header span{
+
+        display:none;
+    }
 
     main{
 
         width:
             calc(100% - 18px);
 
-        padding:
-            15px 0 55px;
+        padding:15px 0 70px;
     }
-
 
     .hero{
 
-        min-height:420px;
+        min-height:455px;
 
         padding:28px 21px;
 
@@ -3043,30 +2961,30 @@ footer{
         text-align:center;
     }
 
-
     .hero h1{
 
         font-size:43px;
     }
-
 
     .hero p{
 
         font-size:14px;
     }
 
-
     .hero .eyebrow{
 
         margin-bottom:14px;
     }
 
+    .hero-actions{
+
+        justify-content:center;
+    }
 
     .hero-visual{
 
         min-height:145px;
     }
-
 
     .medical-orb{
 
@@ -3077,7 +2995,6 @@ footer{
         font-size:51px;
     }
 
-
     .trust-bar{
 
         grid-template-columns:1fr;
@@ -3085,58 +3002,47 @@ footer{
         margin-top:10px;
     }
 
-
     .trust-item{
 
         min-height:54px;
     }
-
 
     .booking-app{
 
         border-radius:23px;
     }
 
-
     .progress-wrap{
 
-        padding:
-            18px 17px 15px;
+        padding:18px 17px 15px;
     }
-
 
     .steps .step{
 
         font-size:8px;
     }
 
-
     .step-content{
 
-        padding:
-            24px 16px;
+        padding:24px 16px;
 
         min-height:460px;
     }
-
 
     .section-heading{
 
         margin-bottom:20px;
     }
 
-
     .section-heading h2{
 
         font-size:30px;
     }
 
-
     .section-heading p{
 
         font-size:13px;
     }
-
 
     .cards-grid{
 
@@ -3145,7 +3051,6 @@ footer{
         gap:10px;
     }
 
-
     .choice-card{
 
         min-height:155px;
@@ -3153,12 +3058,10 @@ footer{
         padding:18px;
     }
 
-
     .doctor-grid{
 
         grid-template-columns:1fr;
     }
-
 
     .doctor-card{
 
@@ -3170,7 +3073,6 @@ footer{
         gap:13px;
     }
 
-
     .doctor-photo{
 
         width:74px;
@@ -3178,12 +3080,10 @@ footer{
         height:94px;
     }
 
-
     .doctor-info p{
 
         font-size:11px;
     }
-
 
     .service-card{
 
@@ -3194,18 +3094,15 @@ footer{
         padding:18px;
     }
 
-
     .service-price{
 
         text-align:left;
     }
 
-
     .service-price button{
 
         width:100%;
     }
-
 
     .date-grid{
 
@@ -3213,12 +3110,10 @@ footer{
             repeat(4,1fr);
     }
 
-
     .date-card{
 
         min-height:69px;
     }
-
 
     .time-grid{
 
@@ -3226,132 +3121,105 @@ footer{
             repeat(2,1fr);
     }
 
-
     .form-grid{
 
         grid-template-columns:1fr;
     }
-
 
     .field.full-width{
 
         grid-column:auto;
     }
 
-
     .mode-options{
 
         grid-template-columns:1fr;
     }
-
 
     .navigation{
 
         padding:16px;
     }
 
-
     .navigation-right{
 
         width:100%;
     }
-
 
     .next-btn{
 
         width:100%;
     }
 
-
     .back-btn{
 
         flex:none;
     }
-
-
-    .location-section{
-
-        margin-top:22px;
-    }
-
-
-    .location-header{
-
-        display:block;
-    }
-
-
-    .location-header h2{
-
-        font-size:30px;
-    }
-
-
-    .location-card{
-
-        border-radius:22px;
-
-        display:flex;
-
-        flex-direction:column;
-    }
-
-
-    .map-container{
-
-        min-height:260px;
-
-        order:1;
-    }
-
-
-    .map-container iframe{
-
-        min-height:260px;
-    }
-
-
-    .location-info{
-
-        padding:22px;
-
-        order:2;
-    }
-
-
-    .map-buttons{
-
-        flex-direction:column;
-    }
-
-
-    .emergency-section{
-
-        display:flex;
-
-        flex-direction:column;
-
-        align-items:stretch;
-
-        padding:20px;
-
-        gap:17px;
-
-        border-radius:21px;
-    }
-
-
-    .emergency-call{
-
-        width:100%;
-    }
-
 
     .success h2{
 
         font-size:30px;
     }
 
+    .location-section{
+
+        margin-top:20px;
+    }
+
+    .location-card{
+
+        padding:21px;
+
+        border-radius:22px;
+    }
+
+    .map-card{
+
+        min-height:330px;
+
+        border-radius:22px;
+    }
+
+    .map-card iframe{
+
+        min-height:330px;
+    }
+
+    .emergency-notice{
+
+        align-items:flex-start;
+    }
+
+    .emergency-float{
+
+        left:12px;
+
+        bottom:12px;
+
+        min-height:46px;
+
+        padding:0 12px;
+
+        border-radius:15px;
+    }
+
+    .emergency-float-text small{
+
+        display:none;
+    }
+
+    .whatsapp-float{
+
+        right:12px;
+
+        bottom:12px;
+
+        width:48px;
+
+        height:48px;
+
+        border-radius:15px;
+    }
 
     footer{
 
@@ -3368,30 +3236,35 @@ footer{
         font-size:37px;
     }
 
-
     .brand-sub{
 
         display:none;
     }
 
+    .brand-name{
+
+        font-size:16px;
+    }
+
+    .emergency-header{
+
+        padding:0 8px;
+    }
 
     .date-grid{
 
         gap:5px;
     }
 
-
     .date-card{
 
         padding:7px 3px;
     }
 
-
     .date-card strong{
 
         font-size:15px;
     }
-
 
     .step-content{
 
@@ -3400,10 +3273,18 @@ footer{
         padding-right:13px;
     }
 
-
-    .emergency-button span.label{
+    .emergency-float-text{
 
         display:none;
+    }
+
+    .emergency-float{
+
+        width:46px;
+
+        padding:0;
+
+        justify-content:center;
     }
 }
 
@@ -3412,7 +3293,6 @@ footer{
 
 
 <body>
-
 
 <div class="background-glow glow-one"></div>
 <div class="background-glow glow-two"></div>
@@ -3424,72 +3304,90 @@ footer{
 
 <header>
 
-<nav class="nav">
-
-
-    <a href="#" class="brand" aria-label="Inicio">
-
-        <div class="brand-mark">
-            +
-        </div>
-
-        <div>
-
-            <div
-                class="brand-name"
-                id="brandName"
-            >
-                Medora
-            </div>
-
-            <div class="brand-sub">
-                Agenda médica
-            </div>
-
-        </div>
-
-    </a>
-
-
-    <div class="header-actions">
-
-
-        <div class="header-security">
-
-            <span class="security-dot"></span>
-
-            Experiencia de reserva segura
-
-        </div>
-
-
-        <!-- BOTÓN DE EMERGENCIA -->
+    <nav class="nav">
 
         <a
-            class="emergency-button"
-            id="headerEmergency"
             href="#"
-            aria-label="Llamar a emergencias"
+            class="brand"
+            aria-label="Inicio"
         >
 
-            <span class="emergency-icon">
-                !
-            </span>
+            <div class="brand-mark">
+                +
+            </div>
 
-            <span class="label">
-                Emergencia
-            </span>
+            <div>
+
+                <div
+                    class="brand-name"
+                    id="brandName"
+                >
+                    Medora
+                </div>
+
+                <div class="brand-sub">
+                    Agenda médica
+                </div>
+
+            </div>
 
         </a>
 
 
-    </div>
+        <div class="header-actions">
+
+            <a
+                href="tel:911"
+                class="emergency-header"
+                aria-label="Llamar al 911"
+            >
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2
+                        19.79 19.79 0 0 1-8.63-3.07
+                        19.5 19.5 0 0 1-6-6
+                        A19.79 19.79 0 0 1 2.12 4.18
+                        2 2 0 0 1 5.11 2h3
+                        a2 2 0 0 1 2 1.72
+                        c.12.9.33 1.78.62 2.63
+                        a2 2 0 0 1-.45 2.11L9 9.73
+                        a16 16 0 0 0 6 6l1.27-1.27
+                        a2 2 0 0 1 2.11-.45
+                        c.85.29 1.73.5 2.63.62
+                        A2 2 0 0 1 22 16.92z"
+                    />
+
+                </svg>
+
+                <span>
+                    Emergencia
+                </span>
+
+                911
+
+            </a>
 
 
-</nav>
+            <div class="header-security">
+
+                <span class="security-dot"></span>
+
+                Experiencia de reserva segura
+
+            </div>
+
+        </div>
+
+    </nav>
 
 </header>
-
 
 
 <main>
@@ -3501,9 +3399,7 @@ footer{
 
 <section class="hero">
 
-
     <div>
-
 
         <div class="eyebrow">
             ✦ Atención médica
@@ -3530,22 +3426,69 @@ footer{
         </p>
 
 
-    </div>
+        <div class="hero-actions">
+
+            <a
+                href="#bookingApp"
+                class="primary-btn"
+                style="
+                    display:inline-flex;
+                    align-items:center;
+                    justify-content:center;
+                    text-decoration:none;
+                "
+            >
+                Agendar una cita
+            </a>
 
 
-    <div class="hero-visual">
+            <a
+                href="tel:911"
+                class="hero-emergency"
+            >
 
-        <div class="medical-orb">
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
 
-            ✚
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2
+                        19.79 19.79 0 0 1-8.63-3.07
+                        19.5 19.5 0 0 1-6-6
+                        A19.79 19.79 0 0 1 2.12 4.18
+                        2 2 0 0 1 5.11 2h3
+                        a2 2 0 0 1 2 1.72
+                        c.12.9.33 1.78.62 2.63
+                        a2 2 0 0 1-.45 2.11L9 9.73
+                        a16 16 0 0 0 6 6l1.27-1.27
+                        a2 2 0 0 1 2.11-.45
+                        c.85.29 1.73.5 2.63.62
+                        A2 2 0 0 1 22 16.92z"
+                    />
+
+                </svg>
+
+                Marcar emergencia · 911
+
+            </a>
 
         </div>
 
     </div>
 
 
-</section>
+    <div class="hero-visual">
 
+        <div class="medical-orb">
+            ✚
+        </div>
+
+    </div>
+
+</section>
 
 
 <!-- =======================================================
@@ -3553,7 +3496,6 @@ footer{
 ======================================================= -->
 
 <section class="trust-bar">
-
 
     <div class="trust-item">
 
@@ -3574,7 +3516,6 @@ footer{
         </div>
 
     </div>
-
 
 
     <div class="trust-item">
@@ -3598,7 +3539,6 @@ footer{
     </div>
 
 
-
     <div class="trust-item">
 
         <div class="trust-icon">
@@ -3619,13 +3559,11 @@ footer{
 
     </div>
 
-
 </section>
 
 
-
 <!-- =======================================================
-     BOOKING APP
+     BOOKING APPLICATION
 ======================================================= -->
 
 <section
@@ -3633,11 +3571,11 @@ footer{
     id="bookingApp"
 >
 
-
-    <!-- PROGRESS -->
+    <!-- =====================================================
+         PROGRESS
+    ====================================================== -->
 
     <div class="progress-wrap">
-
 
         <div class="progress-top">
 
@@ -3647,7 +3585,6 @@ footer{
             >
                 Selecciona una especialidad
             </div>
-
 
             <div
                 class="progress-count"
@@ -3671,14 +3608,12 @@ footer{
 
         <div class="steps">
 
-
             <div
                 class="step active"
                 data-step="1"
             >
                 Especialidad
             </div>
-
 
             <div
                 class="step"
@@ -3687,14 +3622,12 @@ footer{
                 Médico
             </div>
 
-
             <div
                 class="step"
                 data-step="3"
             >
                 Consulta
             </div>
-
 
             <div
                 class="step"
@@ -3703,14 +3636,12 @@ footer{
                 Fecha
             </div>
 
-
             <div
                 class="step"
                 data-step="5"
             >
                 Hora
             </div>
-
 
             <div
                 class="step"
@@ -3719,14 +3650,12 @@ footer{
                 Paciente
             </div>
 
-
             <div
                 class="step"
                 data-step="7"
             >
                 Resumen
             </div>
-
 
             <div
                 class="step"
@@ -3735,14 +3664,12 @@ footer{
                 Solicitud
             </div>
 
-
         </div>
-
 
     </div>
 
 
-    <!-- CONTENIDO DINÁMICO -->
+    <!-- DYNAMIC CONTENT -->
 
     <div
         class="step-content"
@@ -3750,13 +3677,12 @@ footer{
     ></div>
 
 
-    <!-- NAVEGACIÓN -->
+    <!-- NAVIGATION -->
 
     <div
         class="navigation"
         id="navigation"
     >
-
 
         <button
             type="button"
@@ -3779,103 +3705,81 @@ footer{
 
         </div>
 
-
     </div>
-
 
 </section>
 
 
-
 <!-- =======================================================
-     UBICACIÓN
+     LOCATION
 ======================================================= -->
 
 <section
     class="location-section"
-    id="location"
+    id="ubicacion"
 >
 
+    <div class="location-heading">
 
-    <div class="location-header">
-
-
-        <div>
-
-            <div class="kicker">
-                Ubicación
-            </div>
-
-            <h2>
-                Encuéntranos fácilmente.
-            </h2>
-
-            <p>
-                Consulta nuestra ubicación y obtén indicaciones
-                para llegar al consultorio.
-            </p>
-
+        <div class="kicker">
+            Ubicación
         </div>
 
+        <h2>
+            Encuéntranos fácilmente.
+        </h2>
+
+        <p>
+            Consulta nuestra ubicación y utiliza el mapa para
+            planificar tu llegada a la clínica.
+        </p>
 
     </div>
 
 
-
-    <div class="location-card">
-
-
-        <!-- MAPA -->
-
-        <div class="map-container">
+    <div class="location-layout">
 
 
-            <!--
-                MAPA CONFIGURABLE
+        <!-- LOCATION INFO -->
 
-                El iframe se genera automáticamente
-                desde JavaScript utilizando la dirección
-                de CONFIG.location.address.
-            -->
-
-            <iframe
-                id="clinicMap"
-                title="Ubicación de la clínica"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                src=""
-            ></iframe>
-
-
-            <div class="map-overlay">
-                📍 Ubicación de la clínica
-            </div>
-
-
-        </div>
-
-
-
-        <!-- INFORMACIÓN -->
-
-        <div class="location-info">
-
+        <div class="location-card">
 
             <div class="location-icon">
-                ⌖
+
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.8"
+                >
+
+                    <path
+                        d="M20 10c0 5-8 11-8 11S4 15 4 10
+                        a8 8 0 1 1 16 0z"
+                    />
+
+                    <circle
+                        cx="12"
+                        cy="10"
+                        r="2.5"
+                    />
+
+                </svg>
+
             </div>
 
 
-            <h3 id="locationName">
+            <h3 id="clinicLocationName">
                 Medora
             </h3>
 
 
             <p
                 class="location-address"
-                id="locationAddress"
+                id="clinicAddress"
             >
-                Av. de ejemplo #123, Ciudad de México.
+                Paseo de la Reforma,
+                Ciudad de México, México.
             </p>
 
 
@@ -3885,12 +3789,41 @@ footer{
                 <div class="location-detail">
 
                     <div class="location-detail-icon">
-                        ◷
+
+                        <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <circle
+                                cx="12"
+                                cy="12"
+                                r="9"
+                            />
+
+                            <polyline
+                                points="12 7 12 12 15 14"
+                            />
+
+                        </svg>
+
                     </div>
 
-                    <span id="locationHours">
-                        Lunes a viernes · 9:00 a 18:00
-                    </span>
+                    <div>
+
+                        <strong>
+                            Horario
+                        </strong>
+
+                        <span>
+                            Lunes a sábado · 09:00 a 18:00
+                        </span>
+
+                    </div>
 
                 </div>
 
@@ -3898,12 +3831,46 @@ footer{
                 <div class="location-detail">
 
                     <div class="location-detail-icon">
-                        ☎
+
+                        <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2
+                                19.79 19.79 0 0 1-8.63-3.07
+                                19.5 19.5 0 0 1-6-6
+                                A19.79 19.79 0 0 1 2.12 4.18
+                                2 2 0 0 1 5.11 2h3
+                                a2 2 0 0 1 2 1.72
+                                c.12.9.33 1.78.62 2.63
+                                a2 2 0 0 1-.45 2.11L9 9.73
+                                a16 16 0 0 0 6 6l1.27-1.27
+                                a2 2 0 0 1 2.11-.45
+                                c.85.29 1.73.5 2.63.62
+                                A2 2 0 0 1 22 16.92z"
+                            />
+
+                        </svg>
+
                     </div>
 
-                    <span id="locationPhone">
-                        Atención y citas disponibles.
-                    </span>
+                    <div>
+
+                        <strong>
+                            Contacto
+                        </strong>
+
+                        <span>
+                            WhatsApp · 55 33 71 27 67
+                        </span>
+
+                    </div>
 
                 </div>
 
@@ -3911,95 +3878,158 @@ footer{
                 <div class="location-detail">
 
                     <div class="location-detail-icon">
-                        ✓
+
+                        <svg
+                            width="15"
+                            height="15"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                        >
+
+                            <path
+                                d="M3 11l9-8 9 8"
+                            />
+
+                            <path
+                                d="M5 10v10h14V10"
+                            />
+
+                            <path
+                                d="M9 20v-6h6v6"
+                            />
+
+                        </svg>
+
                     </div>
 
-                    <span>
-                        Atención con cita previa.
-                    </span>
+                    <div>
+
+                        <strong>
+                            Atención
+                        </strong>
+
+                        <span>
+                            Presencial y consultas en línea según disponibilidad.
+                        </span>
+
+                    </div>
 
                 </div>
 
-
             </div>
 
 
+            <a
+                class="primary-btn route-btn"
+                id="routeButton"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
 
-            <div class="map-buttons">
-
-
-                <a
-                    id="directionsButton"
-                    class="map-primary"
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
                 >
-                    Cómo llegar
-                </a>
 
+                    <path
+                        d="M5 12h14"
+                    />
 
-                <a
-                    href="#bookingApp"
-                    class="map-secondary"
-                >
-                    Agendar cita
-                </a>
+                    <path
+                        d="m12 5 7 7-7 7"
+                    />
 
+                </svg>
 
-            </div>
+                Cómo llegar
 
+            </a>
 
         </div>
 
 
+        <!-- MAP -->
+
+        <div class="map-card">
+
+            <div class="map-label">
+
+                <span class="map-label-dot"></span>
+
+                Ubicación de la clínica
+
+            </div>
+
+
+            <iframe
+                id="clinicMap"
+                title="Mapa de ubicación de Medora"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                src="https://www.google.com/maps?q=19.4270,-99.1677&z=15&output=embed"
+            ></iframe>
+
+        </div>
+
     </div>
 
 
-</section>
+    <!-- EMERGENCY NOTICE -->
 
+    <div class="emergency-notice">
 
+        <div class="emergency-notice-icon">
 
-<!-- =======================================================
-     EMERGENCIA
-======================================================= -->
+            <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+            >
 
-<section class="emergency-section">
+                <path
+                    d="M10.3 2.9 1.8 17a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 2.9a2 2 0 0 0-3.4 0z"
+                />
 
+                <line
+                    x1="12"
+                    y1="9"
+                    x2="12"
+                    y2="13"
+                />
 
-    <div class="emergency-content">
+                <line
+                    x1="12"
+                    y1="17"
+                    x2="12.01"
+                    y2="17"
+                />
 
+            </svg>
 
-        <div class="emergency-large-icon">
-            !
         </div>
 
 
         <div>
 
-            <h3>
-                ¿Necesitas atención de emergencia?
-            </h3>
+            <strong>
+                ¿Es una emergencia médica?
+            </strong>
 
-            <p>
-                Si estás ante una situación médica urgente,
-                utiliza el botón de llamada correspondiente.
-            </p>
+            <span>
+                Esta plataforma no sustituye los servicios de urgencias.
+                Si existe una emergencia médica, llama al 911 o acude
+                al servicio de urgencias más cercano.
+            </span>
 
         </div>
 
-
     </div>
-
-
-    <a
-        id="emergencyCall"
-        class="emergency-call"
-        href="#"
-    >
-        ☎ Llamar ahora
-    </a>
-
 
 </section>
 
@@ -4007,6 +4037,9 @@ footer{
 </main>
 
 
+<!-- =======================================================
+     FOOTER
+======================================================= -->
 
 <footer>
 
@@ -4019,8 +4052,111 @@ footer{
 
     Plataforma de agenda y solicitud de citas.
 
+    <br>
+
+    Datos médicos, profesionales y ubicación mostrados
+    como información de demostración y sujetos a configuración
+    por parte de la clínica.
+
 </footer>
 
+
+<!-- =======================================================
+     FLOATING EMERGENCY
+======================================================= -->
+
+<a
+    href="tel:911"
+    class="emergency-float"
+    aria-label="Llamar al 911"
+>
+
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+    >
+
+        <path
+            d="M22 16.92v3a2 2 0 0 1-2.18 2
+            19.79 19.79 0 0 1-8.63-3.07
+            19.5 19.5 0 0 1-6-6
+            A19.79 19.79 0 0 1 2.12 4.18
+            2 2 0 0 1 5.11 2h3
+            a2 2 0 0 1 2 1.72
+            c.12.9.33 1.78.62 2.63
+            a2 2 0 0 1-.45 2.11L9 9.73
+            a16 16 0 0 0 6 6l1.27-1.27
+            a2 2 0 0 1 2.11-.45
+            c.85.29 1.73.5 2.63.62
+            A2 2 0 0 1 22 16.92z"
+        />
+
+    </svg>
+
+
+    <span class="emergency-float-text">
+
+        <small>
+            Emergencia
+        </small>
+
+        911
+
+    </span>
+
+</a>
+
+
+<!-- =======================================================
+     WHATSAPP FLOATING
+======================================================= -->
+
+<a
+    href="https://wa.me/525533712767"
+    class="whatsapp-float"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp"
+>
+
+    <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.8"
+    >
+
+        <path
+            d="M21 11.5a8.38 8.38 0 0 1-8.5 8.5
+            8.4 8.4 0 0 1-4.1-1.05L4 20l1.05-4.1
+            A8.4 8.4 0 0 1 4 11.8
+            8.5 8.5 0 1 1 21 11.5z"
+        />
+
+        <path
+            d="M8.5 9.5c.2-.45.4-.46.75-.47h.55
+            c.18 0 .35.04.45.3l.65 1.6
+            c.08.2.04.36-.07.52l-.4.55
+            c-.12.15-.16.28-.05.47
+            .45.78 1.08 1.38 1.87 1.82
+            .19.1.32.08.47-.05l.55-.4
+            c.16-.11.32-.15.52-.07l1.6.65
+            c.26.1.3.27.3.45
+            0 .35-.02.55-.1.82-.4
+            .27-.3.5-.75.5-1.2
+            0-.18-.02-.28-.12-.37
+            -1.02-1.02-2.26-1.78-3.63-2.25
+            -.12-.04-.24-.05-.36-.05
+            -.9 0-1.7.43-2.2 1.1
+            -.25.34-.35.7-.35 1.1
+            0 .42.1.8.3 1.12"
+        />
+
+    </svg>
+
+</a>
 
 
 <div
@@ -4029,11 +4165,11 @@ footer{
 ></div>
 
 
-
 <script>
 
 /* =========================================================
-   MEDORA — CONFIGURACIÓN
+   MEDORA — JAVASCRIPT
+   CONFIGURACIÓN PRINCIPAL
 ========================================================= */
 
 
@@ -4044,1004 +4180,547 @@ const CONFIG = {
        INFORMACIÓN GENERAL
     ===================================================== */
 
-    clinicName:
-        "Medora",
+    clinicName:"Medora",
 
 
-
-    /* =====================================================
-       WHATSAPP PARA SOLICITAR CITAS
+    /*
+       WHATSAPP DE LA CLÍNICA
 
        Formato internacional:
+       México = 52 + número
 
-       México:
        525533712767
-    ===================================================== */
+    */
 
-    whatsapp:
-        "525533712767",
-
+    whatsapp:"525533712767",
 
 
     /* =====================================================
-       TELÉFONO DE EMERGENCIAS
+       UBICACIÓN
 
-       IMPORTANTE:
+       Esta ubicación es de demostración.
 
-       Sustituye este número por el número real
-       que deba utilizar la clínica.
+       Actualmente:
+       Paseo de la Reforma / CDMX
 
-       Si la emergencia corresponde a un servicio
-       público de emergencias en México, utiliza 911.
-
-       No debe utilizarse un número ficticio.
+       Si quieres cambiarla posteriormente,
+       modifica únicamente estos valores.
     ===================================================== */
 
-    emergencyPhone:
-        "911",
+    clinic:{
 
-
-
-    /* =====================================================
-       UBICACIÓN DE LA CLÍNICA
-
-       CAMBIA ESTOS DATOS.
-
-       La dirección se utiliza para:
-
-       1. Mostrar el mapa.
-       2. Crear el botón "Cómo llegar".
-    ===================================================== */
-
-    location: {
-
-        name:
-            "Medora — Centro Médico",
+        name:"Medora",
 
         address:
-            "Paseo de la Reforma, Ciudad de México, México",
+            "Paseo de la Reforma, Ciudad de México, México.",
 
-        hours:
-            "Lunes a viernes · 9:00 a 18:00",
+        lat:19.4270,
 
-        phone:
-            "Atención con cita previa."
+        lng:-99.1677
 
     },
-
 
 
     /* =====================================================
        ESPECIALIDADES
     ===================================================== */
 
-    specialties: [
+    specialties:[
 
 
         {
-
             id:"general",
-
             name:"Medicina general",
-
             icon:"✚",
-
             description:
                 "Atención médica integral, valoración inicial y seguimiento de salud.",
-
-            type:
-                "Presencial / En línea",
-
-            price:
-                650,
-
-            doctors:
-                2
-
+            type:"Presencial / En línea",
+            price:650,
+            doctors:2
         },
 
 
         {
-
             id:"cardiology",
-
             name:"Cardiología",
-
             icon:"♡",
-
             description:
                 "Valoración y seguimiento especializado de la salud cardiovascular.",
-
-            type:
-                "Presencial",
-
-            price:
-                1100,
-
-            doctors:
-                2
-
+            type:"Presencial",
+            price:1100,
+            doctors:2
         },
 
 
         {
-
             id:"dermatology",
-
             name:"Dermatología",
-
             icon:"◌",
-
             description:
                 "Evaluación especializada de piel, cabello y uñas.",
-
-            type:
-                "Presencial / En línea",
-
-            price:
-                950,
-
-            doctors:
-                2
-
+            type:"Presencial / En línea",
+            price:950,
+            doctors:2
         },
 
 
         {
-
             id:"pediatrics",
-
             name:"Pediatría",
-
             icon:"♧",
-
             description:
                 "Atención médica especializada para niñas, niños y adolescentes.",
-
-            type:
-                "Presencial",
-
-            price:
-                750,
-
-            doctors:
-                2
-
+            type:"Presencial",
+            price:750,
+            doctors:2
         },
 
 
         {
-
             id:"gynecology",
-
             name:"Ginecología",
-
             icon:"✿",
-
             description:
                 "Atención especializada de la salud ginecológica.",
-
-            type:
-                "Presencial / En línea",
-
-            price:
-                900,
-
-            doctors:
-                2
-
+            type:"Presencial / En línea",
+            price:900,
+            doctors:2
         },
 
 
         {
-
             id:"dentistry",
-
             name:"Odontología",
-
             icon:"◇",
-
             description:
                 "Valoración y atención profesional de la salud bucal.",
-
-            type:
-                "Presencial",
-
-            price:
-                700,
-
-            doctors:
-                2
-
+            type:"Presencial",
+            price:700,
+            doctors:2
         },
 
 
         {
-
             id:"trauma",
-
             name:"Traumatología y ortopedia",
-
             icon:"⌁",
-
             description:
                 "Valoración especializada del sistema musculoesquelético.",
-
-            type:
-                "Presencial",
-
-            price:
-                1000,
-
-            doctors:
-                1
-
+            type:"Presencial",
+            price:1000,
+            doctors:1
         },
 
 
         {
-
             id:"ophthalmology",
-
             name:"Oftalmología",
-
             icon:"◉",
-
             description:
                 "Evaluación especializada de la salud visual.",
-
-            type:
-                "Presencial",
-
-            price:
-                950,
-
-            doctors:
-                1
-
+            type:"Presencial",
+            price:950,
+            doctors:1
         },
 
 
         {
-
             id:"nutrition",
-
             name:"Nutrición",
-
             icon:"◒",
-
             description:
                 "Orientación nutricional personalizada y seguimiento.",
-
-            type:
-                "Presencial / En línea",
-
-            price:
-                600,
-
-            doctors:
-                1
-
+            type:"Presencial / En línea",
+            price:600,
+            doctors:1
         },
 
 
         {
-
             id:"psychology",
-
             name:"Psicología",
-
             icon:"◯",
-
             description:
                 "Espacio profesional de acompañamiento psicológico.",
-
-            type:
-                "Presencial / En línea",
-
-            price:
-                700,
-
-            doctors:
-                1
-
+            type:"Presencial / En línea",
+            price:700,
+            doctors:1
         },
 
 
         {
-
             id:"neurology",
-
             name:"Neurología",
-
             icon:"⌁",
-
             description:
                 "Valoración especializada del sistema nervioso.",
-
-            type:
-                "Presencial",
-
-            price:
-                1200,
-
-            doctors:
-                1
-
+            type:"Presencial",
+            price:1200,
+            doctors:1
         },
 
 
         {
-
             id:"urology",
-
             name:"Urología",
-
             icon:"◇",
-
             description:
                 "Atención especializada de la salud urinaria y urológica.",
-
-            type:
-                "Presencial",
-
-            price:
-                1000,
-
-            doctors:
-                1
-
+            type:"Presencial",
+            price:1000,
+            doctors:1
         }
 
     ],
-
 
 
     /* =====================================================
        MÉDICOS
     ===================================================== */
 
-    doctors: [
+    doctors:[
 
 
         {
-
             id:"dr-alvarez",
-
             specialty:"general",
-
             name:"Dra. Sofía Álvarez",
-
             description:
                 "Atención integral y seguimiento de pacientes adultos.",
-
-            experience:
-                "8 años de experiencia",
-
-            consultation:
-                "Consulta integral",
-
-            price:
-                650,
-
+            experience:"8 años de experiencia",
+            consultation:"Consulta integral",
+            price:650,
             image:
                 "https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dr-martinez",
-
             specialty:"general",
-
             name:"Dr. Daniel Martínez",
-
             description:
                 "Valoración médica general y seguimiento preventivo.",
-
-            experience:
-                "11 años de experiencia",
-
-            consultation:
-                "Consulta integral",
-
-            price:
-                700,
-
+            experience:"11 años de experiencia",
+            consultation:"Consulta integral",
+            price:700,
             image:
                 "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dra-rodriguez",
-
             specialty:"cardiology",
-
             name:"Dra. Valeria Rodríguez",
-
             description:
                 "Valoración cardiovascular y seguimiento especializado.",
-
-            experience:
-                "12 años de experiencia",
-
-            consultation:
-                "Consulta cardiovascular",
-
-            price:
-                1100,
-
+            experience:"12 años de experiencia",
+            consultation:"Consulta cardiovascular",
+            price:1100,
             image:
                 "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dr-castro",
-
             specialty:"cardiology",
-
             name:"Dr. Alejandro Castro",
-
             description:
                 "Atención especializada y seguimiento cardiovascular.",
-
-            experience:
-                "14 años de experiencia",
-
-            consultation:
-                "Consulta cardiovascular",
-
-            price:
-                1200,
-
+            experience:"14 años de experiencia",
+            consultation:"Consulta cardiovascular",
+            price:1200,
             image:
                 "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dra-torres",
-
             specialty:"dermatology",
-
             name:"Dra. Mariana Torres",
-
             description:
                 "Valoración dermatológica y seguimiento de tratamientos.",
-
-            experience:
-                "9 años de experiencia",
-
-            consultation:
-                "Consulta dermatológica",
-
-            price:
-                950,
-
+            experience:"9 años de experiencia",
+            consultation:"Consulta dermatológica",
+            price:950,
             image:
                 "https://images.unsplash.com/photo-1551601651-2a8555f1a136?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dr-herrera",
-
             specialty:"dermatology",
-
             name:"Dr. Luis Herrera",
-
             description:
                 "Atención dermatológica para diferentes etapas de la vida.",
-
-            experience:
-                "10 años de experiencia",
-
-            consultation:
-                "Consulta dermatológica",
-
-            price:
-                1000,
-
+            experience:"10 años de experiencia",
+            consultation:"Consulta dermatológica",
+            price:1000,
             image:
                 "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dra-mendoza",
-
             specialty:"pediatrics",
-
             name:"Dra. Camila Mendoza",
-
             description:
                 "Atención pediátrica integral y seguimiento infantil.",
-
-            experience:
-                "10 años de experiencia",
-
-            consultation:
-                "Consulta pediátrica",
-
-            price:
-                750,
-
+            experience:"10 años de experiencia",
+            consultation:"Consulta pediátrica",
+            price:750,
             image:
                 "https://images.unsplash.com/photo-1651008376811-b90baee60c1f?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dr-navarro",
-
             specialty:"pediatrics",
-
             name:"Dr. Jorge Navarro",
-
             description:
                 "Valoración y seguimiento médico pediátrico.",
-
-            experience:
-                "13 años de experiencia",
-
-            consultation:
-                "Consulta pediátrica",
-
-            price:
-                800,
-
+            experience:"13 años de experiencia",
+            consultation:"Consulta pediátrica",
+            price:800,
             image:
                 "https://images.unsplash.com/photo-1618498082410-b4aa22193b38?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dra-salinas",
-
             specialty:"gynecology",
-
             name:"Dra. Andrea Salinas",
-
             description:
                 "Atención ginecológica integral y seguimiento.",
-
-            experience:
-                "11 años de experiencia",
-
-            consultation:
-                "Consulta ginecológica",
-
-            price:
-                900,
-
+            experience:"11 años de experiencia",
+            consultation:"Consulta ginecológica",
+            price:900,
             image:
-                "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=500&q=85"
-
+                "https://images.unsplash.com/photo-1659353888159-7d0e4f0c0a4d?auto=format&fit=crop&w=500&q=85"
         },
 
 
         {
-
             id:"dra-vargas",
-
             specialty:"gynecology",
-
             name:"Dra. Fernanda Vargas",
-
             description:
                 "Atención ginecológica y orientación preventiva.",
-
-            experience:
-                "9 años de experiencia",
-
-            consultation:
-                "Consulta ginecológica",
-
-            price:
-                950,
-
+            experience:"9 años de experiencia",
+            consultation:"Consulta ginecológica",
+            price:950,
             image:
                 "https://images.unsplash.com/photo-1614608682850-e0d6ed316d47?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dr-ortega",
-
             specialty:"dentistry",
-
             name:"Dr. Ricardo Ortega",
-
             description:
                 "Valoración odontológica y atención preventiva.",
-
-            experience:
-                "12 años de experiencia",
-
-            consultation:
-                "Consulta odontológica",
-
-            price:
-                700,
-
+            experience:"12 años de experiencia",
+            consultation:"Consulta odontológica",
+            price:700,
             image:
                 "https://images.unsplash.com/photo-1629909613654-28e377c37b09?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dra-fuentes",
-
             specialty:"dentistry",
-
             name:"Dra. Paula Fuentes",
-
             description:
                 "Atención odontológica general y valoración.",
-
-            experience:
-                "8 años de experiencia",
-
-            consultation:
-                "Consulta odontológica",
-
-            price:
-                750,
-
+            experience:"8 años de experiencia",
+            consultation:"Consulta odontológica",
+            price:750,
             image:
                 "https://images.unsplash.com/photo-1598256989800-fe5f95da9787?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dr-ramirez",
-
             specialty:"trauma",
-
             name:"Dr. Miguel Ramírez",
-
             description:
                 "Valoración musculoesquelética y ortopédica.",
-
-            experience:
-                "15 años de experiencia",
-
-            consultation:
-                "Consulta ortopédica",
-
-            price:
-                1000,
-
+            experience:"15 años de experiencia",
+            consultation:"Consulta ortopédica",
+            price:1000,
             image:
                 "https://images.unsplash.com/photo-1582750433449-648ed127bb54?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dra-leon",
-
             specialty:"ophthalmology",
-
             name:"Dra. Elisa León",
-
             description:
                 "Evaluación oftalmológica y seguimiento visual.",
-
-            experience:
-                "13 años de experiencia",
-
-            consultation:
-                "Consulta oftalmológica",
-
-            price:
-                950,
-
+            experience:"13 años de experiencia",
+            consultation:"Consulta oftalmológica",
+            price:950,
             image:
                 "https://images.unsplash.com/photo-1550831107-1553da8c8464?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dra-romero",
-
             specialty:"nutrition",
-
             name:"Dra. Natalia Romero",
-
             description:
                 "Orientación nutricional individualizada.",
-
-            experience:
-                "7 años de experiencia",
-
-            consultation:
-                "Consulta nutricional",
-
-            price:
-                600,
-
+            experience:"7 años de experiencia",
+            consultation:"Consulta nutricional",
+            price:600,
             image:
                 "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dra-molina",
-
             specialty:"psychology",
-
             name:"Dra. Laura Molina",
-
             description:
                 "Acompañamiento psicológico profesional.",
-
-            experience:
-                "9 años de experiencia",
-
-            consultation:
-                "Consulta psicológica",
-
-            price:
-                700,
-
+            experience:"9 años de experiencia",
+            consultation:"Consulta psicológica",
+            price:700,
             image:
-                "https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=500&q=85"
-
+                "https://images.unsplash.com/photo-1594824476967-48c8b964273f?auto=format&fit=crop&w=500&q=85"
         },
 
 
         {
-
             id:"dr-santos",
-
             specialty:"neurology",
-
             name:"Dr. Fernando Santos",
-
             description:
                 "Valoración neurológica especializada.",
-
-            experience:
-                "16 años de experiencia",
-
-            consultation:
-                "Consulta neurológica",
-
-            price:
-                1200,
-
+            experience:"16 años de experiencia",
+            consultation:"Consulta neurológica",
+            price:1200,
             image:
                 "https://images.unsplash.com/photo-1537368910025-700350fe46c7?auto=format&fit=crop&w=500&q=85"
-
         },
 
 
         {
-
             id:"dr-mejia",
-
             specialty:"urology",
-
             name:"Dr. Arturo Mejía",
-
             description:
                 "Atención urológica especializada.",
-
-            experience:
-                "14 años de experiencia",
-
-            consultation:
-                "Consulta urológica",
-
-            price:
-                1000,
-
+            experience:"14 años de experiencia",
+            consultation:"Consulta urológica",
+            price:1000,
             image:
                 "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=500&q=85"
-
         }
 
     ],
-
 
 
     /* =====================================================
        SERVICIOS
     ===================================================== */
 
-    services: [
+    services:[
 
 
         {
-
             id:"first",
-
             name:"Consulta de primera vez",
-
             description:
                 "Valoración inicial y revisión del motivo de consulta.",
-
-            duration:
-                "45 min",
-
-            modes:[
-                "presencial",
-                "online"
-            ],
-
-            adjustment:
-                0
-
+            duration:"45 min",
+            modes:["presencial","online"],
+            adjustment:0
         },
 
 
         {
-
             id:"followup",
-
             name:"Consulta de seguimiento",
-
             description:
                 "Revisión de evolución y continuidad de atención.",
-
-            duration:
-                "30 min",
-
-            modes:[
-                "presencial",
-                "online"
-            ],
-
-            adjustment:
-                -100
-
+            duration:"30 min",
+            modes:["presencial","online"],
+            adjustment:-100
         },
 
 
         {
-
             id:"valuation",
-
             name:"Valoración",
-
             description:
                 "Valoración profesional orientada al motivo de consulta.",
-
-            duration:
-                "40 min",
-
-            modes:[
-                "presencial"
-            ],
-
-            adjustment:
-                -50
-
+            duration:"40 min",
+            modes:["presencial"],
+            adjustment:-50
         },
 
 
         {
-
             id:"specialized",
-
             name:"Consulta especializada",
-
             description:
                 "Atención enfocada en el área específica del especialista.",
-
-            duration:
-                "60 min",
-
-            modes:[
-                "presencial"
-            ],
-
-            adjustment:
-                150
-
+            duration:"60 min",
+            modes:["presencial"],
+            adjustment:150
         },
 
 
         {
-
             id:"review",
-
             name:"Revisión",
-
             description:
                 "Revisión de estudios, resultados o evolución.",
-
-            duration:
-                "30 min",
-
-            modes:[
-                "presencial",
-                "online"
-            ],
-
-            adjustment:
-                -100
-
+            duration:"30 min",
+            modes:["presencial","online"],
+            adjustment:-100
         },
 
 
         {
-
             id:"online",
-
             name:"Consulta en línea",
-
             description:
                 "Consulta mediante videollamada en horario programado.",
-
-            duration:
-                "40 min",
-
-            modes:[
-                "online"
-            ],
-
-            adjustment:
-                -50
-
+            duration:"40 min",
+            modes:["online"],
+            adjustment:-50
         },
 
 
         {
-
             id:"presential",
-
             name:"Consulta presencial",
-
             description:
                 "Atención en consultorio con el especialista.",
-
-            duration:
-                "45 min",
-
-            modes:[
-                "presencial"
-            ],
-
-            adjustment:
-                0
-
+            duration:"45 min",
+            modes:["presencial"],
+            adjustment:0
         }
 
     ]
 
 };
-
 
 
 /* =========================================================
@@ -5081,166 +4760,102 @@ const state = {
 };
 
 
-
 /* =========================================================
    ELEMENTOS
 ========================================================= */
 
 const content =
-    document.getElementById(
-        "stepContent"
-    );
-
+    document.getElementById("stepContent");
 
 const nextButton =
-    document.getElementById(
-        "nextButton"
-    );
-
+    document.getElementById("nextButton");
 
 const backButton =
-    document.getElementById(
-        "backButton"
-    );
-
+    document.getElementById("backButton");
 
 const progressBar =
-    document.getElementById(
-        "progressBar"
-    );
-
+    document.getElementById("progressBar");
 
 const progressLabel =
-    document.getElementById(
-        "progressLabel"
-    );
-
+    document.getElementById("progressLabel");
 
 const progressCount =
-    document.getElementById(
-        "progressCount"
-    );
-
+    document.getElementById("progressCount");
 
 const navigation =
-    document.getElementById(
-        "navigation"
-    );
-
+    document.getElementById("navigation");
 
 const toast =
-    document.getElementById(
-        "toast"
-    );
-
+    document.getElementById("toast");
 
 
 /* =========================================================
-   CONFIGURAR SITIO
+   CONFIGURAR DATOS GENERALES
 ========================================================= */
 
-document.getElementById(
-    "brandName"
-).textContent =
+document.getElementById("brandName")
+    .textContent =
     CONFIG.clinicName;
 
-
-document.getElementById(
-    "footerBrand"
-).textContent =
+document.getElementById("footerBrand")
+    .textContent =
     CONFIG.clinicName;
 
-
-document.getElementById(
-    "year"
-).textContent =
+document.getElementById("year")
+    .textContent =
     new Date().getFullYear();
 
 
-document.getElementById(
-    "locationName"
-).textContent =
-    CONFIG.location.name;
+/* =========================================================
+   CONFIGURAR MAPA
+========================================================= */
+
+function setupLocation(){
+
+    const lat =
+        CONFIG.clinic.lat;
+
+    const lng =
+        CONFIG.clinic.lng;
+
+    const map =
+        document.getElementById("clinicMap");
+
+    const address =
+        document.getElementById("clinicAddress");
+
+    const locationName =
+        document.getElementById("clinicLocationName");
+
+    const route =
+        document.getElementById("routeButton");
 
 
-document.getElementById(
-    "locationAddress"
-).textContent =
-    CONFIG.location.address;
+    locationName.textContent =
+        CONFIG.clinic.name;
 
 
-document.getElementById(
-    "locationHours"
-).textContent =
-    CONFIG.location.hours;
+    address.textContent =
+        CONFIG.clinic.address;
 
 
-document.getElementById(
-    "locationPhone"
-).textContent =
-    CONFIG.location.phone;
+    map.src =
+        `https://www.google.com/maps?q=${lat},${lng}&z=15&output=embed`;
 
+
+    route.href =
+        `https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}`;
+
+}
 
 
 /* =========================================================
-   MAPA
-
-   Se utiliza Google Maps mediante una búsqueda embebida.
-
-   No requiere API Key para este formato.
+   INICIALIZACIÓN
 ========================================================= */
 
-const mapQuery =
-    encodeURIComponent(
-        CONFIG.location.address
-    );
-
-
-document.getElementById(
-    "clinicMap"
-).src =
-    `https://www.google.com/maps?q=${mapQuery}&output=embed`;
-
-
-
-/* =========================================================
-   BOTÓN CÓMO LLEGAR
-========================================================= */
-
-document.getElementById(
-    "directionsButton"
-).href =
-    `https://www.google.com/maps/dir/?api=1&destination=${mapQuery}`;
-
-
-
-/* =========================================================
-   EMERGENCIAS
-========================================================= */
-
-const emergencyHref =
-    `tel:${CONFIG.emergencyPhone}`;
-
-
-document.getElementById(
-    "headerEmergency"
-).href =
-    emergencyHref;
-
-
-document.getElementById(
-    "emergencyCall"
-).href =
-    emergencyHref;
-
-
-
-/* =========================================================
-   INICIO
-========================================================= */
+setupLocation();
 
 render();
-
 
 
 /* =========================================================
@@ -5252,63 +4867,76 @@ function render(){
     updateProgress();
 
 
-    if(state.step === 1)
+    if(state.step === 1){
+
         renderSpecialties();
 
+    }
 
-    if(state.step === 2)
+    else if(state.step === 2){
+
         renderDoctors();
 
+    }
 
-    if(state.step === 3)
+    else if(state.step === 3){
+
         renderServices();
 
+    }
 
-    if(state.step === 4)
+    else if(state.step === 4){
+
         renderDates();
 
+    }
 
-    if(state.step === 5)
+    else if(state.step === 5){
+
         renderTimes();
 
+    }
 
-    if(state.step === 6)
+    else if(state.step === 6){
+
         renderPatient();
 
+    }
 
-    if(state.step === 7)
+    else if(state.step === 7){
+
         renderSummary();
 
+    }
 
-    if(state.step === 8)
+    else if(state.step === 8){
+
         renderSuccess();
+
+    }
 
 
     updateNavigation();
 
 
-    const app =
-        document.getElementById(
-            "bookingApp"
-        );
+    const booking =
+        document.getElementById("bookingApp");
 
 
-    if(app){
+    if(booking){
 
         window.scrollTo({
 
             top:
-                app.offsetTop - 80,
+                booking.offsetTop - 80,
 
-            behavior:
-                "smooth"
+            behavior:"smooth"
 
         });
 
     }
 
 }
-
 
 
 /* =========================================================
@@ -5363,9 +4991,7 @@ function updateProgress(){
         .forEach(el=>{
 
             const n =
-                Number(
-                    el.dataset.step
-                );
+                Number(el.dataset.step);
 
 
             el.classList.toggle(
@@ -5384,9 +5010,8 @@ function updateProgress(){
 }
 
 
-
 /* =========================================================
-   PASO 1
+   PASO 1 — ESPECIALIDADES
 ========================================================= */
 
 function renderSpecialties(){
@@ -5402,17 +5027,17 @@ function renderSpecialties(){
                 </div>
 
                 <h2>
-                    Encuentra al especialista
-                    adecuado para ti.
+                    Encuentra al especialista adecuado para ti.
                 </h2>
 
                 <p>
-                    Selecciona un área médica para
-                    conocer los profesionales disponibles
-                    y sus opciones de atención.
+                    Selecciona un área médica para conocer
+                    los profesionales disponibles y sus
+                    opciones de atención.
                 </p>
 
             </div>
+
 
             <div class="cards-grid">
 
@@ -5420,31 +5045,33 @@ function renderSpecialties(){
 
                     <button
                         type="button"
-                        class="choice-card
-                        ${state.specialty?.id === s.id
+                        class="choice-card ${
+                            state.specialty?.id === s.id
                             ? "selected"
                             : ""
                         }"
-                        onclick="
-                            selectSpecialty('${s.id}')
-                        "
+                        onclick="selectSpecialty('${s.id}')"
                     >
 
                         <div class="select-arrow">
                             →
                         </div>
 
+
                         <div class="card-icon">
                             ${s.icon}
                         </div>
+
 
                         <h3>
                             ${s.name}
                         </h3>
 
+
                         <p>
                             ${s.description}
                         </p>
+
 
                         <div class="card-meta">
 
@@ -5454,13 +5081,15 @@ function renderSpecialties(){
 
                             <span class="pill">
                                 ${s.doctors}
-                                ${s.doctors === 1
+                                ${
+                                    s.doctors === 1
                                     ? "médico"
                                     : "médicos"
                                 }
                             </span>
 
                         </div>
+
 
                         <div class="card-price">
                             Desde
@@ -5481,21 +5110,26 @@ function renderSpecialties(){
 }
 
 
-
 /* =========================================================
-   ESPECIALIDAD
+   SELECCIONAR ESPECIALIDAD
 ========================================================= */
 
 function selectSpecialty(id){
 
     const specialty =
         CONFIG.specialties.find(
-            x=>x.id===id
+            x=>x.id === id
         );
 
 
-    if(!specialty)
+    if(!specialty){
+
+        showToast(
+            "No se encontró la especialidad."
+        );
+
         return;
+    }
 
 
     state.specialty =
@@ -5534,16 +5168,25 @@ function selectSpecialty(id){
 }
 
 
-
 /* =========================================================
-   PASO 2
+   PASO 2 — MÉDICOS
 ========================================================= */
 
 function renderDoctors(){
 
+    if(!state.specialty){
+
+        state.step = 1;
+
+        render();
+
+        return;
+    }
+
+
     const doctors =
         CONFIG.doctors.filter(
-            d=>
+            d =>
                 d.specialty ===
                 state.specialty.id
         );
@@ -5571,22 +5214,22 @@ function renderDoctors(){
 
             </div>
 
+
             ${
                 doctors.length
+
                 ?
-                `
-                <div class="doctor-grid">
+
+                `<div class="doctor-grid">
 
                     ${doctors.map(d=>`
 
                         <article
-                            class="
-                                doctor-card
-                                ${state.doctor?.id === d.id
-                                    ? "selected"
-                                    : ""
-                                }
-                            "
+                            class="doctor-card ${
+                                state.doctor?.id === d.id
+                                ? "selected"
+                                : ""
+                            }"
                         >
 
                             <img
@@ -5599,19 +5242,23 @@ function renderDoctors(){
                                 "
                             >
 
+
                             <div class="doctor-info">
 
                                 <h3>
                                     ${d.name}
                                 </h3>
 
+
                                 <div class="doctor-specialty">
                                     ${state.specialty.name}
                                 </div>
 
+
                                 <p>
                                     ${d.description}
                                 </p>
+
 
                                 <div class="doctor-data">
 
@@ -5625,31 +5272,31 @@ function renderDoctors(){
 
                                 </div>
 
+
                                 <div
                                     style="
-                                    display:flex;
-                                    align-items:center;
-                                    justify-content:space-between;
-                                    gap:10px;
+                                        display:flex;
+                                        align-items:center;
+                                        justify-content:space-between;
+                                        gap:10px;
                                     "
                                 >
 
                                     <strong
                                         style="
-                                        font-size:13px;
+                                            font-size:13px;
                                         "
                                     >
                                         ${money(d.price)}
                                         MXN
                                     </strong>
 
+
                                     <button
                                         type="button"
                                         class="primary-btn"
                                         onclick="
-                                            selectDoctor(
-                                                '${d.id}'
-                                            )
+                                            selectDoctor('${d.id}')
                                         "
                                     >
                                         Seleccionar
@@ -5663,20 +5310,22 @@ function renderDoctors(){
 
                     `).join("")}
 
-                </div>
-                `
+                </div>`
+
                 :
+
                 `
+
                 <div class="empty">
 
                     <div class="empty-icon">
                         ⌕
                     </div>
 
-                    No hay médicos disponibles
-                    actualmente.
+                    No hay médicos disponibles actualmente.
 
                 </div>
+
                 `
             }
 
@@ -5687,21 +5336,19 @@ function renderDoctors(){
 }
 
 
-
 /* =========================================================
-   MÉDICO
+   SELECCIONAR MÉDICO
 ========================================================= */
 
 function selectDoctor(id){
 
     const doctor =
         CONFIG.doctors.find(
-            x=>x.id===id
+            x=>x.id === id
         );
 
 
-    if(!doctor)
-        return;
+    if(!doctor) return;
 
 
     state.doctor =
@@ -5736,15 +5383,27 @@ function selectDoctor(id){
 }
 
 
-
 /* =========================================================
-   PASO 3
+   PASO 3 — SERVICIOS
 ========================================================= */
 
 function renderServices(){
 
+    if(!state.doctor){
+
+        state.step = 2;
+
+        render();
+
+        return;
+    }
+
+
     const available =
-        CONFIG.services;
+        CONFIG.services.filter(
+            service =>
+                service.modes.length > 0
+        );
 
 
     content.innerHTML = `
@@ -5769,6 +5428,7 @@ function renderServices(){
 
             </div>
 
+
             <div class="service-list">
 
                 ${available.map(service=>{
@@ -5784,15 +5444,11 @@ function renderServices(){
                     return `
 
                         <article
-                            class="
-                                service-card
-                                ${
-                                    state.service?.id ===
-                                    service.id
-                                    ? "selected"
-                                    : ""
-                                }
-                            "
+                            class="service-card ${
+                                state.service?.id === service.id
+                                ? "selected"
+                                : ""
+                            }"
                         >
 
                             <div>
@@ -5801,11 +5457,15 @@ function renderServices(){
                                     ${service.name}
                                 </h3>
 
+
                                 <p>
                                     ${service.description}
                                 </p>
 
-                                <div class="service-details">
+
+                                <div
+                                    class="service-details"
+                                >
 
                                     <span>
                                         ◷
@@ -5828,20 +5488,23 @@ function renderServices(){
 
                             </div>
 
+
                             <div class="service-price">
 
                                 <strong>
                                     ${money(finalPrice)}
                                 </strong>
 
+
                                 <small
                                     style="
-                                    color:#7c8997;
-                                    font-size:9px;
+                                        color:#7c8997;
+                                        font-size:9px;
                                     "
                                 >
                                     MXN
                                 </small>
+
 
                                 <button
                                     type="button"
@@ -5872,21 +5535,19 @@ function renderServices(){
 }
 
 
-
 /* =========================================================
-   SERVICIO
+   SELECCIONAR SERVICIO
 ========================================================= */
 
 function selectService(id){
 
     const service =
         CONFIG.services.find(
-            x=>x.id===id
+            x=>x.id === id
         );
 
 
-    if(!service)
-        return;
+    if(!service) return;
 
 
     state.service =
@@ -5929,12 +5590,21 @@ function selectService(id){
 }
 
 
-
 /* =========================================================
-   PASO 4 — FECHAS
+   PASO 4 — FECHA
 ========================================================= */
 
 function renderDates(){
+
+    if(!state.service){
+
+        state.step = 3;
+
+        render();
+
+        return;
+    }
+
 
     const dates =
         generateDates();
@@ -5961,11 +5631,13 @@ function renderDates(){
 
             </div>
 
+
             <div class="panel">
 
                 <div class="panel-title">
                     Próximos días disponibles
                 </div>
+
 
                 <div class="date-grid">
 
@@ -5973,19 +5645,13 @@ function renderDates(){
 
                         <button
                             type="button"
-                            class="
-                                date-card
-                                ${
-                                    state.date?.value ===
-                                    date.value
-                                    ? "selected"
-                                    : ""
-                                }
-                            "
+                            class="date-card ${
+                                state.date?.value === date.value
+                                ? "selected"
+                                : ""
+                            }"
                             onclick="
-                                selectDate(
-                                    '${date.value}'
-                                )
+                                selectDate('${date.value}')
                             "
                         >
 
@@ -5993,9 +5659,11 @@ function renderDates(){
                                 ${date.weekday}
                             </small>
 
+
                             <strong>
                                 ${date.day}
                             </strong>
+
 
                             <span>
                                 ${date.month}
@@ -6009,15 +5677,16 @@ function renderDates(){
 
             </div>
 
+
             <div
                 style="
-                margin-top:14px;
-                padding:14px 16px;
-                border-radius:15px;
-                background:#f3f7fc;
-                color:#718094;
-                font-size:11px;
-                line-height:1.5;
+                    margin-top:14px;
+                    padding:14px 16px;
+                    border-radius:15px;
+                    background:#f3f7fc;
+                    color:#718094;
+                    font-size:11px;
+                    line-height:1.5;
                 "
             >
 
@@ -6034,7 +5703,6 @@ function renderDates(){
 }
 
 
-
 /* =========================================================
    GENERAR FECHAS
 ========================================================= */
@@ -6042,7 +5710,6 @@ function renderDates(){
 function generateDates(){
 
     const result = [];
-
 
     const now =
         new Date();
@@ -6079,7 +5746,11 @@ function generateDates(){
     ];
 
 
-    for(let i=0;i<14;i++){
+    for(
+        let i=0;
+        i<14;
+        i++
+    ){
 
         const d =
             new Date(now);
@@ -6090,17 +5761,22 @@ function generateDates(){
         );
 
 
+        /*
+           Se mantiene el domingo visible,
+           pero puedes excluirlo si la clínica
+           no trabaja ese día.
+        */
+
+
         const iso =
             formatISO(d);
 
 
         result.push({
 
-            value:
-                iso,
+            value:iso,
 
-            day:
-                d.getDate(),
+            day:d.getDate(),
 
             weekday:
                 weekdays[d.getDay()],
@@ -6118,17 +5794,15 @@ function generateDates(){
 }
 
 
-
 /* =========================================================
-   FECHA
+   SELECCIONAR FECHA
 ========================================================= */
 
 function selectDate(value){
 
     const date =
         new Date(
-            value +
-            "T12:00:00"
+            value + "T12:00:00"
         );
 
 
@@ -6162,12 +5836,21 @@ function selectDate(value){
 }
 
 
-
 /* =========================================================
    PASO 5 — HORARIOS
 ========================================================= */
 
 function renderTimes(){
+
+    if(!state.date){
+
+        state.step = 4;
+
+        render();
+
+        return;
+    }
+
 
     const slots =
         generateTimeSlots();
@@ -6188,20 +5871,20 @@ function renderTimes(){
                 </h2>
 
                 <p>
-                    Elige un horario disponible para
-                    tu consulta. Los horarios ocupados
-                    no pueden seleccionarse.
+                    Elige un horario disponible para tu
+                    consulta. Los horarios ocupados no
+                    pueden seleccionarse.
                 </p>
 
             </div>
 
+
             <div class="panel">
 
                 <div class="panel-title">
-
                     ${state.date.formatted}
-
                 </div>
+
 
                 <div class="time-grid">
 
@@ -6209,40 +5892,33 @@ function renderTimes(){
 
                         <button
                             type="button"
-                            class="
-                                time-slot
-                                ${
-                                    state.time ===
-                                    slot.time
-                                    ? "selected"
-                                    : ""
-                                }
-                            "
-                            ${
-                                slot.busy
-                                ? "disabled"
+                            class="time-slot ${
+                                state.time === slot.time
+                                ? "selected"
                                 : ""
-                            }
+                            }"
+                            ${slot.busy ? "disabled":""}
                             onclick="
-                                selectTime(
-                                    '${slot.time}'
-                                )
+                                selectTime('${slot.time}')
                             "
                         >
+
                             ${slot.time}
+
                         </button>
 
                     `).join("")}
 
                 </div>
 
+
                 <div
                     style="
-                    display:flex;
-                    gap:15px;
-                    margin-top:17px;
-                    color:#8793a1;
-                    font-size:10px;
+                        display:flex;
+                        gap:15px;
+                        margin-top:17px;
+                        color:#8793a1;
+                        font-size:10px;
                     "
                 >
 
@@ -6252,7 +5928,7 @@ function renderTimes(){
 
                     <span
                         style="
-                        text-decoration:line-through;
+                            text-decoration:line-through;
                         "
                     >
                         ● Ocupado
@@ -6269,9 +5945,8 @@ function renderTimes(){
 }
 
 
-
 /* =========================================================
-   HORARIOS
+   GENERAR HORARIOS
 ========================================================= */
 
 function generateTimeSlots(){
@@ -6289,116 +5964,116 @@ function generateTimeSlots(){
 
     const busyByDoctor = {
 
-        "dr-alvarez":
-            [
-                "10:30",
-                "14:00",
-                "16:30"
-            ],
 
-        "dr-martinez":
-            [
-                "09:30",
-                "12:00",
-                "17:00"
-            ],
+        "dr-alvarez":[
+            "10:30",
+            "14:00",
+            "16:30"
+        ],
 
-        "dra-rodriguez":
-            [
-                "11:00",
-                "15:00"
-            ],
 
-        "dr-castro":
-            [
-                "10:00",
-                "13:30",
-                "16:00"
-            ],
+        "dr-martinez":[
+            "09:30",
+            "12:00",
+            "17:00"
+        ],
 
-        "dra-torres":
-            [
-                "09:30",
-                "14:30"
-            ],
 
-        "dr-herrera":
-            [
-                "11:30",
-                "16:00"
-            ],
+        "dra-rodriguez":[
+            "11:00",
+            "15:00"
+        ],
 
-        "dra-mendoza":
-            [
-                "10:00",
-                "13:00"
-            ],
 
-        "dr-navarro":
-            [
-                "09:00",
-                "15:30"
-            ],
+        "dr-castro":[
+            "10:00",
+            "13:30",
+            "16:00"
+        ],
 
-        "dra-salinas":
-            [
-                "11:00",
-                "16:30"
-            ],
 
-        "dra-vargas":
-            [
-                "09:30",
-                "14:00"
-            ],
+        "dra-torres":[
+            "09:30",
+            "14:30"
+        ],
 
-        "dr-ortega":
-            [
-                "10:30",
-                "15:00"
-            ],
 
-        "dra-fuentes":
-            [
-                "11:30",
-                "16:00"
-            ],
+        "dr-herrera":[
+            "11:30",
+            "16:00"
+        ],
 
-        "dr-ramirez":
-            [
-                "10:00",
-                "13:30"
-            ],
 
-        "dra-leon":
-            [
-                "11:00",
-                "15:30"
-            ],
+        "dra-mendoza":[
+            "10:00",
+            "13:00"
+        ],
 
-        "dra-romero":
-            [
-                "10:30",
-                "16:00"
-            ],
 
-        "dra-molina":
-            [
-                "09:30",
-                "14:30"
-            ],
+        "dr-navarro":[
+            "09:00",
+            "15:30"
+        ],
 
-        "dr-santos":
-            [
-                "11:00",
-                "15:00"
-            ],
 
-        "dr-mejia":
-            [
-                "10:00",
-                "16:30"
-            ]
+        "dra-salinas":[
+            "11:00",
+            "16:30"
+        ],
+
+
+        "dra-vargas":[
+            "09:30",
+            "14:00"
+        ],
+
+
+        "dr-ortega":[
+            "10:30",
+            "15:00"
+        ],
+
+
+        "dra-fuentes":[
+            "11:30",
+            "16:00"
+        ],
+
+
+        "dr-ramirez":[
+            "10:00",
+            "13:30"
+        ],
+
+
+        "dra-leon":[
+            "11:00",
+            "15:30"
+        ],
+
+
+        "dra-romero":[
+            "10:30",
+            "16:00"
+        ],
+
+
+        "dra-molina":[
+            "09:30",
+            "14:30"
+        ],
+
+
+        "dr-santos":[
+            "11:00",
+            "15:00"
+        ],
+
+
+        "dr-mejia":[
+            "10:00",
+            "16:30"
+        ]
 
     };
 
@@ -6415,32 +6090,30 @@ function generateTimeSlots(){
         hour++
     ){
 
-        [
-            "00",
-            "30"
-        ].forEach(minutes=>{
+        ["00","30"].forEach(
+            minutes=>{
 
-            const time =
-                String(hour)
-                .padStart(2,"0")
-                +
-                ":"
-                +
-                minutes;
+                const time =
+
+                    String(hour)
+                        .padStart(2,"0")
+                    +
+                    ":"
+                    +
+                    minutes;
 
 
-            slots.push({
+                slots.push({
 
-                time,
+                    time,
 
-                busy:
-                    busy.includes(
-                        time
-                    )
+                    busy:
+                        busy.includes(time)
 
-            });
+                });
 
-        });
+            }
+        );
 
     }
 
@@ -6450,9 +6123,8 @@ function generateTimeSlots(){
 }
 
 
-
 /* =========================================================
-   HORA
+   SELECCIONAR HORA
 ========================================================= */
 
 function selectTime(time){
@@ -6477,12 +6149,21 @@ function selectTime(time){
 }
 
 
-
 /* =========================================================
    PASO 6 — PACIENTE
 ========================================================= */
 
 function renderPatient(){
+
+    if(!state.time){
+
+        state.step = 5;
+
+        render();
+
+        return;
+    }
+
 
     const onlineAvailable =
         state.service.modes.includes(
@@ -6528,16 +6209,15 @@ function renderPatient(){
                         Nombre completo *
                     </label>
 
+
                     <input
                         id="patientName"
                         type="text"
                         autocomplete="name"
                         placeholder="Ej. Juan Pérez"
-                        value="
-                            ${escapeHTML(
-                                state.patient.name
-                            )}
-                        "
+                        value="${escapeHTML(
+                            state.patient.name
+                        )}"
                     >
 
                 </div>
@@ -6549,17 +6229,16 @@ function renderPatient(){
                         Teléfono *
                     </label>
 
+
                     <input
                         id="patientPhone"
                         type="tel"
                         autocomplete="tel"
                         inputmode="tel"
                         placeholder="55 0000 0000"
-                        value="
-                            ${escapeHTML(
-                                state.patient.phone
-                            )}
-                        "
+                        value="${escapeHTML(
+                            state.patient.phone
+                        )}"
                     >
 
                 </div>
@@ -6571,16 +6250,15 @@ function renderPatient(){
                         Correo electrónico
                     </label>
 
+
                     <input
                         id="patientEmail"
                         type="email"
                         autocomplete="email"
                         placeholder="correo@ejemplo.com"
-                        value="
-                            ${escapeHTML(
-                                state.patient.email
-                            )}
-                        "
+                        value="${escapeHTML(
+                            state.patient.email
+                        )}"
                     >
 
                 </div>
@@ -6592,12 +6270,10 @@ function renderPatient(){
                         Motivo breve de la consulta *
                     </label>
 
+
                     <textarea
                         id="patientReason"
-                        placeholder="
-                            Describe brevemente el
-                            motivo de tu consulta.
-                        "
+                        placeholder="Describe brevemente el motivo de tu consulta."
                     >${escapeHTML(
                         state.patient.reason
                     )}</textarea>
@@ -6607,7 +6283,9 @@ function renderPatient(){
 
                 ${
                     onlineAvailable
+
                     ?
+
                     `
 
                     <div class="field full-width">
@@ -6634,6 +6312,7 @@ function renderPatient(){
                                     }
                                 >
 
+
                                 <span class="mode-label">
                                     🏥 Presencial
                                 </span>
@@ -6655,25 +6334,29 @@ function renderPatient(){
                                     }
                                 >
 
+
                                 <span class="mode-label">
                                     ◉ En línea
                                 </span>
 
                             </label>
 
-
                         </div>
 
                     </div>
 
                     `
+
                     :
+
                     `
+
                     <input
                         type="hidden"
                         id="fixedMode"
                         value="presencial"
                     >
+
                     `
                 }
 
@@ -6683,13 +6366,13 @@ function renderPatient(){
 
             <div
                 style="
-                margin-top:18px;
-                padding:14px 16px;
-                border-radius:15px;
-                background:#f4f7fa;
-                color:#758294;
-                font-size:10px;
-                line-height:1.55;
+                    margin-top:18px;
+                    padding:14px 16px;
+                    border-radius:15px;
+                    background:#f4f7fa;
+                    color:#758294;
+                    font-size:10px;
+                    line-height:1.55;
                 "
             >
 
@@ -6699,7 +6382,6 @@ function renderPatient(){
 
             </div>
 
-
         </div>
 
     `;
@@ -6707,51 +6389,41 @@ function renderPatient(){
 }
 
 
-
 /* =========================================================
-   VALIDACIÓN
+   VALIDAR PACIENTE
 ========================================================= */
 
 function continueFromPatient(){
 
     const name =
         document
-        .getElementById(
-            "patientName"
-        )
-        .value
-        .trim();
+            .getElementById("patientName")
+            .value
+            .trim();
 
 
     const phone =
         document
-        .getElementById(
-            "patientPhone"
-        )
-        .value
-        .trim();
+            .getElementById("patientPhone")
+            .value
+            .trim();
 
 
     const email =
         document
-        .getElementById(
-            "patientEmail"
-        )
-        .value
-        .trim();
+            .getElementById("patientEmail")
+            .value
+            .trim();
 
 
     const reason =
         document
-        .getElementById(
-            "patientReason"
-        )
-        .value
-        .trim();
+            .getElementById("patientReason")
+            .value
+            .trim();
 
 
-    let valid =
-        true;
+    let valid = true;
 
 
     const nameEl =
@@ -6784,7 +6456,7 @@ function continueFromPatient(){
         reasonEl,
         emailEl
     ].forEach(
-        el=>
+        el =>
             el.classList.remove(
                 "invalid"
             )
@@ -6797,8 +6469,7 @@ function continueFromPatient(){
             "invalid"
         );
 
-        valid =
-            false;
+        valid = false;
     }
 
 
@@ -6815,8 +6486,7 @@ function continueFromPatient(){
             "invalid"
         );
 
-        valid =
-            false;
+        valid = false;
     }
 
 
@@ -6826,8 +6496,7 @@ function continueFromPatient(){
             "invalid"
         );
 
-        valid =
-            false;
+        valid = false;
     }
 
 
@@ -6841,8 +6510,7 @@ function continueFromPatient(){
             "invalid"
         );
 
-        valid =
-            false;
+        valid = false;
     }
 
 
@@ -6880,10 +6548,8 @@ function continueFromPatient(){
 
     state.patient.mode =
         selectedMode
-        ?
-        selectedMode.value
-        :
-        "presencial";
+        ? selectedMode.value
+        : "presencial";
 
 
     state.appointmentId =
@@ -6899,12 +6565,24 @@ function continueFromPatient(){
 }
 
 
-
 /* =========================================================
    PASO 7 — RESUMEN
 ========================================================= */
 
 function renderSummary(){
+
+    if(
+        !state.patient.name ||
+        !state.appointmentId
+    ){
+
+        state.step = 6;
+
+        render();
+
+        return;
+    }
+
 
     const price =
         getFinalPrice();
@@ -6938,7 +6616,6 @@ function renderSummary(){
 
                 <div class="review-card">
 
-
                     ${reviewRow(
                         "Especialidad",
                         state.specialty.name
@@ -6971,12 +6648,9 @@ function renderSummary(){
 
                     ${reviewRow(
                         "Modalidad",
-                        state.patient.mode ===
-                        "online"
-                        ?
-                        "En línea"
-                        :
-                        "Presencial"
+                        state.patient.mode === "online"
+                        ? "En línea"
+                        : "Presencial"
                     )}
 
 
@@ -6997,9 +6671,7 @@ function renderSummary(){
                         state.patient.reason
                     )}
 
-
                 </div>
-
 
 
                 <div
@@ -7009,7 +6681,6 @@ function renderSummary(){
 
 
                     <div class="ticket-top">
-
 
                         <div class="ticket-brand">
 
@@ -7036,9 +6707,7 @@ function renderSummary(){
 
                         </div>
 
-
                     </div>
-
 
 
                     <div class="ticket-body">
@@ -7076,17 +6745,13 @@ function renderSummary(){
 
                         ${ticketItem(
                             "Modalidad",
-                            state.patient.mode ===
-                            "online"
-                            ?
-                            "En línea"
-                            :
-                            "Presencial"
+                            state.patient.mode === "online"
+                            ? "En línea"
+                            : "Presencial"
                         )}
 
 
-                        <div class="ticket-divider">
-                        </div>
+                        <div class="ticket-divider"></div>
 
 
                         <div class="ticket-total">
@@ -7110,15 +6775,11 @@ function renderSummary(){
 
                         </div>
 
-
                     </div>
-
 
                 </div>
 
-
             </div>
-
 
         </div>
 
@@ -7127,9 +6788,8 @@ function renderSummary(){
 }
 
 
-
 /* =========================================================
-   PASO 8
+   PASO 8 — ÉXITO
 ========================================================= */
 
 function renderSuccess(){
@@ -7137,6 +6797,7 @@ function renderSuccess(){
     content.innerHTML = `
 
         <div class="step-view success">
+
 
             <div class="success-icon">
                 ✓
@@ -7164,7 +6825,9 @@ function renderSuccess(){
                     Solicitud pendiente de confirmación.
                 </strong>
 
+
                 <br>
+
 
                 La cita no se considera confirmada
                 definitivamente hasta recibir confirmación
@@ -7187,9 +6850,9 @@ function renderSuccess(){
 
             <div
                 style="
-                margin-top:16px;
-                color:#8995a3;
-                font-size:10px;
+                    margin-top:16px;
+                    color:#8995a3;
+                    font-size:10px;
                 "
             >
 
@@ -7198,13 +6861,11 @@ function renderSuccess(){
 
             </div>
 
-
         </div>
 
     `;
 
 }
-
 
 
 /* =========================================================
@@ -7256,6 +6917,10 @@ function updateNavigation(){
     );
 
 
+    nextButton.onclick =
+        null;
+
+
     if(state.step === 6){
 
         nextButton.textContent =
@@ -7266,6 +6931,7 @@ function updateNavigation(){
 
     }
 
+
     else if(state.step === 7){
 
         nextButton.textContent =
@@ -7275,6 +6941,7 @@ function updateNavigation(){
             confirmRequest;
 
     }
+
 
     else{
 
@@ -7291,7 +6958,6 @@ function updateNavigation(){
         previousStep;
 
 }
-
 
 
 /* =========================================================
@@ -7354,11 +7020,9 @@ function continueStep(){
 
     state.step++;
 
-
     render();
 
 }
-
 
 
 /* =========================================================
@@ -7367,26 +7031,30 @@ function continueStep(){
 
 function previousStep(){
 
-    if(state.step <= 1)
+    if(
+        state.step <= 1
+    ){
+
         return;
+    }
 
 
     state.step--;
-
 
     render();
 
 }
 
 
-
 /* =========================================================
-   CONFIRMAR
+   CONFIRMAR SOLICITUD
 ========================================================= */
 
 function confirmRequest(){
 
-    if(!state.appointmentId){
+    if(
+        !state.appointmentId
+    ){
 
         state.appointmentId =
             generateAppointmentId();
@@ -7403,7 +7071,6 @@ function confirmRequest(){
 }
 
 
-
 /* =========================================================
    WHATSAPP
 ========================================================= */
@@ -7415,12 +7082,9 @@ function openWhatsApp(){
 
 
     const mode =
-        state.patient.mode ===
-        "online"
-        ?
-        "En línea"
-        :
-        "Presencial";
+        state.patient.mode === "online"
+        ? "En línea"
+        : "Presencial";
 
 
     const message =
@@ -7453,7 +7117,9 @@ Esta solicitud queda pendiente de confirmación.`;
 
 
     const url =
-        `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(message)}`;
+        `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(
+            message
+        )}`;
 
 
     window.open(
@@ -7463,7 +7129,6 @@ Esta solicitud queda pendiente de confirmación.`;
     );
 
 }
-
 
 
 /* =========================================================
@@ -7494,9 +7159,8 @@ function getFinalPrice(){
 }
 
 
-
 /* =========================================================
-   ID
+   ID DE CITA
 ========================================================= */
 
 function generateAppointmentId(){
@@ -7504,25 +7168,24 @@ function generateAppointmentId(){
     const datePart =
 
         new Date()
-        .toISOString()
-        .slice(0,10)
-        .replaceAll("-","");
+            .toISOString()
+            .slice(0,10)
+            .replaceAll("-","");
 
 
     const random =
 
         Math.random()
-        .toString(36)
-        .substring(2,7)
-        .toUpperCase();
+            .toString(36)
+            .substring(2,7)
+            .toUpperCase();
 
 
-    return:
-
-        `MED-${datePart}-${random}`;
+    return `
+        MED-${datePart}-${random}
+    `.replace(/\s/g,"");
 
 }
-
 
 
 /* =========================================================
@@ -7548,7 +7211,6 @@ function money(value){
 }
 
 
-
 function formatISO(date){
 
     return [
@@ -7566,7 +7228,6 @@ function formatISO(date){
     ].join("-");
 
 }
-
 
 
 function formatDateLong(date){
@@ -7605,15 +7266,10 @@ function formatDateLong(date){
     return `
 
         ${weekdays[date.getDay()]}
-
         ${date.getDate()}
-
         de
-
         ${months[date.getMonth()]}
-
         de
-
         ${date.getFullYear()}
 
     `.replace(/\s+/g," ").trim();
@@ -7621,38 +7277,38 @@ function formatDateLong(date){
 }
 
 
-
 function escapeHTML(value){
 
-    return String(value || "")
+    return String(
+        value || ""
+    )
 
-        .replaceAll(
-            "&",
-            "&amp;"
-        )
+    .replaceAll(
+        "&",
+        "&amp;"
+    )
 
-        .replaceAll(
-            "<",
-            "&lt;"
-        )
+    .replaceAll(
+        "<",
+        "&lt;"
+    )
 
-        .replaceAll(
-            ">",
-            "&gt;"
-        )
+    .replaceAll(
+        ">",
+        "&gt;"
+    )
 
-        .replaceAll(
-            '"',
-            "&quot;"
-        )
+    .replaceAll(
+        '"',
+        "&quot;"
+    )
 
-        .replaceAll(
-            "'",
-            "&#039;"
-        );
+    .replaceAll(
+        "'",
+        "&#039;"
+    );
 
 }
-
 
 
 function reviewRow(
@@ -7679,7 +7335,6 @@ function reviewRow(
 }
 
 
-
 function ticketItem(
     label,
     value
@@ -7702,7 +7357,6 @@ function ticketItem(
     `;
 
 }
-
 
 
 function showToast(message){
@@ -7732,31 +7386,6 @@ function showToast(message){
         },2200);
 
 }
-
-
-
-/* =========================================================
-   BOTÓN PRINCIPAL
-========================================================= */
-
-nextButton.addEventListener(
-    "click",
-    ()=>{
-
-        if(state.step === 6){
-
-            continueFromPatient();
-
-        }
-
-        else if(state.step === 7){
-
-            confirmRequest();
-
-        }
-
-    }
-);
 
 </script>
 
